@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mathdev.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="tsparticles" aria-hidden="true"></div>
+
+    <!-- barra de navegacao -->
+    <header class="site-header">
+        <div class="site-header__inner">
+
+            <a href="#inicio" class="site-brand">
+                mathdev<span>.</span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                id="nav-toggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" id="main-nav">
+                <a href="#sobre-mim" data-pt="Sobre mim" data-en="About me">Sobre mim</a>
+                <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
+                <a href="#contato" class="nav-contact"data-pt="Contato" data-en="Contact">Contato</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- conteudo principal -->
+    <main>
+
+        <section id="projetos">
+
+        </section>
+
+        <section id="sobre-mim">
+
+        </section>
+
+        <section id="contato">
+
+        </section>
+
+    </main>
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
+    <script src="scripts/background.js"></script>
+    <script src="scripts/main.js"></script>
+
+</body>
+</html>
