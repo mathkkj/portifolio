@@ -1,11 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c1110">
+
     <title>mathdev.</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div id="tsparticles" aria-hidden="true"></div>
@@ -31,36 +36,429 @@
             </button>
 
             <nav class="site-nav" id="main-nav">
-                <a href="#sobre-mim" data-pt="Sobre mim" data-en="About me">Sobre mim</a>
-                <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
-                <a href="#contato" class="nav-contact"data-pt="Contato" data-en="Contact">Contato</a>
+                <a
+                    href="#sobre-mim"
+                    data-pt="Sobre mim"
+                    data-en="About me"
+                >Sobre mim</a>
+
+                <a
+                    href="#projetos"
+                    data-pt="Projetos"
+                    data-en="Projects"
+                >Projetos</a>
+
+                <a
+                    href="#contato"
+                    class="nav-contact"
+                    data-pt="Contato"
+                    data-en="Contact"
+                >Contato</a>
             </nav>
 
         </div>
     </header>
 
     <!-- conteudo principal -->
-    <main>
+    <main id="inicio">
 
-        <section id="projetos">
+        <!-- grade de projetos -->
+        <section id="projetos" class="projects-section">
+
+            <div class="projects-container">
+
+                <div class="projects-heading">
+
+                    <span class="projects-label">PORTFÓLIO / 01</span>
+
+                    <h2
+                        data-pt="Meus projetos"
+                        data-en="My projects"
+                    >Meus projetos</h2>
+
+                    <p
+                        data-pt="Algumas coisas que eu desenvolvi ou estou desenvolvendo."
+                        data-en="Some things I've built or am currently working on."
+                    >
+                        Algumas coisas que eu desenvolvi ou estou desenvolvendo.
+                    </p>
+
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- PROJETO 01: ROGUENAVE -->
+                    <article class="project-tile">
+
+                        <button
+                            class="project-tile-button"
+                            type="button"
+                            data-project-open="rogue-nave-details"
+                            aria-haspopup="dialog"
+                            aria-controls="rogue-nave-details"
+                            aria-label="Ver detalhes do RogueNave"
+                        >
+
+                            <span class="project-tile-media">
+
+                                <!-- imagem inicial do card -->
+                                <img
+                                    class="project-tile-image"
+                                    src="assets/projetos/rogue-nave.png"
+                                    alt=""
+                                    loading="lazy"
+                                >
+
+                                <!-- preview em video no hover -->
+                                <video
+                                    class="project-tile-video"
+                                    data-src="assets/projetos/rogue-nave-preview.mp4"
+                                    poster="assets/projetos/rogue-nave.png"
+                                    muted
+                                    loop
+                                    playsinline
+                                    preload="none"
+                                    aria-hidden="true"
+                                    tabindex="-1"
+                                ></video>
+
+                                <span class="project-tile-shade"></span>
+
+                                <span class="project-tile-number">01</span>
+
+                                <span class="project-tile-hint"
+                                      aria-hidden="true">↗</span>
+
+                                <!-- titulo e descricao -->
+                                <span class="project-tile-copy">
+
+                                    <span class="project-tile-title">
+                                        RogueNave
+                                    </span>
+
+                                    <span
+                                        class="project-tile-summary"
+                                        data-pt="Um roguelike com exploração procedural, combate e chefes."
+                                        data-en="A roguelike featuring procedural exploration, combat and bosses."
+                                    >
+                                        Um roguelike com exploração procedural, combate e chefes.
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+                    </article>
+
+                    <!--
+                    PARA ADICIONAR OUTRO PROJETO:
+                    Copie o article acima e crie um dialog
+                    com um ID proprio para os detalhes.
+                    -->
+
+                </div>
+
+            </div>
 
         </section>
 
-        <section id="sobre-mim">
+        <!-- sobre mim -->
+        <section id="sobre-mim"></section>
 
-        </section>
-
-        <section id="contato">
-
-        </section>
+        <!-- contato -->
+        <section id="contato"></section>
 
     </main>
 
-    <!-- scripts -->
+    <!-- JANELA COMPLETA DO ROGUENAVE -->
+    <dialog
+        id="rogue-nave-details"
+        class="project-dialog"
+        aria-labelledby="rogue-nave-details-title"
+    >
+
+        <div class="project-dialog-content">
+
+            <button
+                class="project-dialog-close"
+                type="button"
+                aria-label="Fechar detalhes"
+                data-dialog-close
+            >×</button>
+
+            <!-- titulo e descricao -->
+            <div class="project-dialog-heading">
+
+                <span class="projects-label">PROJETO / 01</span>
+
+                <h2 id="rogue-nave-details-title">RogueNave</h2>
+
+                <p
+                    data-pt="RogueNAVE é um roguelite indie brasileiro de ficção científica ambientado em uma escola técnica do Rio de Janeiro. O projeto acompanha estudantes de Programação e Multimídia em um confronto com o Dr. Schmirtz para salvar a escola. Sua proposta combina combate dinâmico, chefes com minigames e estilos de luta distintos: ataques à distância para a personagem de Programação e combate corpo a corpo para a de Multimídia. A geração procedural de fases, desafios e caminhos cria novas combinações a cada partida. O desenvolvimento envolveu sistemas de geração de fases, combate, habilidades e chefes."
+                    data-en="RogueNAVE is a Brazilian indie sci-fi roguelite set in a technical school in Rio de Janeiro. The project follows Programming and Multimedia students in a confrontation with Dr. Schmirtz to save their school. Its design combines fast-paced combat, bosses with minigames, and distinct fighting styles: ranged attacks for the Programming character and melee combat for the Multimedia character. Procedurally generated floors, challenges, and paths create new combinations in every run. Development involved level-generation, combat, ability, and boss systems."
+                >
+                    RogueNAVE é um roguelite indie brasileiro de ficção científica ambientado em uma escola técnica do Rio de Janeiro. O projeto acompanha estudantes de Programação e Multimídia em um confronto com o Dr. Schmirtz para salvar a escola. Sua proposta combina combate dinâmico, chefes com minigames e estilos de luta distintos: ataques à distância para a personagem de Programação e combate corpo a corpo para a de Multimídia. A geração procedural de fases, desafios e caminhos cria novas combinações a cada partida. O desenvolvimento envolveu sistemas de geração de fases, combate, habilidades e chefes.
+                </p>
+
+            </div>
+
+            <!-- GALERIA DE IMAGENS E VIDEOS -->
+            <section class="project-media-section">
+
+                <div class="project-media-heading">
+
+                    <div>
+                        <span class="projects-label">MEDIA / 01</span>
+
+                        <h3
+                            data-pt="Imagens e vídeos"
+                            data-en="Screenshots and videos"
+                        >Imagens e vídeos</h3>
+                    </div>
+
+                </div>
+
+                <div class="project-media-grid">
+
+                    <!-- IMAGEM 01 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/rogue-nave.png"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="assets/projetos/rogue-nave.png"
+                                alt="RogueNave - imagem principal"
+                                loading="lazy"
+                            >
+                        </a>
+
+                        <figcaption
+                            data-pt="Imagem principal do projeto"
+                            data-en="Main project screenshot"
+                        >
+                            Imagem principal do projeto
+                        </figcaption>
+
+                    </figure>
+
+                    <!-- IMAGEM 02 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/rogue-nave-2.png"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="assets/projetos/rogue-nave-2.png"
+                                alt="RogueNave - segunda imagem"
+                                loading="lazy"
+                            >
+                        </a>
+
+                        <figcaption
+                            data-pt="Outra imagem do jogo"
+                            data-en="Another game screenshot"
+                        >
+                            Outra imagem do jogo
+                        </figcaption>
+
+                    </figure>
+
+                    <!-- VIDEO 01 -->
+                    <figure class="project-media-item">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                            poster="assets/projetos/rogue-nave.png"
+                        >
+                            <source
+                                src="assets/projetos/rogue-nave-gameplay.mp4"
+                                type="video/mp4"
+                            >
+
+                            Seu navegador não suporta vídeos.
+                        </video>
+
+                        <figcaption
+                            data-pt="Gameplay"
+                            data-en="Gameplay"
+                        >Gameplay</figcaption>
+
+                    </figure>
+
+                    <!-- VIDEO 02 -->
+                    <figure class="project-media-item">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                            poster="assets/projetos/rogue-nave-2.png"
+                        >
+                            <source
+                                src="assets/projetos/rogue-nave-combate.mp4"
+                                type="video/mp4"
+                            >
+
+                            Seu navegador não suporta vídeos.
+                        </video>
+
+                        <figcaption
+                            data-pt="Sistema de combate"
+                            data-en="Combat system"
+                        >Sistema de combate</figcaption>
+
+                    </figure>
+
+                    <!--
+                    PARA ADICIONAR MAIS MIDIA:
+                    Copie uma figure project-media-item.
+                    Pode adicionar quantas imagens e videos quiser.
+                    -->
+
+                </div>
+
+            </section>
+
+            <!-- tecnologias -->
+            <div class="project-tags">
+                <span>Godot</span>
+                <span>GDScript</span>
+                <span>Game Dev</span>
+                <span>Game Design</span>
+
+                <span
+                    data-pt="Direção"
+                    data-en="Direction"
+                >Direção</span>
+            </div>
+
+            <!-- estatisticas -->
+            <div class="project-stats">
+
+                <div class="project-stat">
+
+                    <span class="stat-symbol">&lt;/&gt;</span>
+
+                    <div>
+                        <strong id="rogue-nave-commits">...</strong>
+
+                        <span
+                            data-pt="commits"
+                            data-en="commits"
+                        >commits</span>
+                    </div>
+
+                </div>
+
+                <div class="project-stat">
+
+                    <span class="stat-symbol">↓</span>
+
+                    <div>
+                        <strong id="rogue-nave-downloads">...</strong>
+
+                        <span
+                            data-pt="downloads no itch.io"
+                            data-en="itch.io downloads"
+                        >downloads no itch.io</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- grafico de atividade -->
+            <div class="project-chart">
+
+                <div class="project-chart-heading">
+
+                    <h4
+                        data-pt="Atividade no GitHub"
+                        data-en="GitHub activity"
+                    >Atividade no GitHub</h4>
+
+                    <span
+                        data-pt="Distribuição dos últimos 100 commits"
+                        data-en="Distribution of the latest 100 commits"
+                    >
+                        Distribuição dos últimos 100 commits
+                    </span>
+
+                </div>
+
+                <div class="project-chart-container">
+                    <canvas
+                        id="rogue-nave-chart"
+                        role="img"
+                        aria-label="Gráfico de atividade dos commits"
+                    ></canvas>
+                </div>
+
+            </div>
+
+            <!-- links -->
+            <div class="project-actions">
+
+                <a
+                    id="rogue-nave-github"
+                    class="project-link"
+                    href="https://github.com/mathkkj/ROGUENAVE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span
+                        data-pt="Código no GitHub"
+                        data-en="Source on GitHub"
+                    >Código no GitHub</span>
+
+                    <span class="project-arrow">↗</span>
+                </a>
+
+                <a
+                    id="rogue-nave-itch"
+                    class="project-link"
+                    href="https://mathkkj.itch.io/roguenave"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span
+                        data-pt="Jogar no itch.io"
+                        data-en="Play on itch.io"
+                    >Jogar no itch.io</span>
+
+                    <span class="project-arrow">↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </dialog>
+
+    <!-- bibliotecas -->
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://static.itch.io/api.js"></script>
+
+    <!-- scripts do site -->
     <script src="scripts/background.js"></script>
     <script src="scripts/main.js"></script>
 
+    <!-- scripts das APIs -->
+    <script src="scripts/itch.js"></script>
+    <script src="scripts/projetos.js"></script>
+    <script src="scripts/portifolio.js"></script>
+
 </body>
+
 </html>
