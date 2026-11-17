@@ -552,6 +552,9 @@ button:focus-visible {
 
 }
 
+
+
+
 /* hover em computadores */
 
 @media (hover: hover) and (pointer: fine) {
@@ -1225,41 +1228,28 @@ button:focus-visible {
     }
 
 }
-
-/* dispositivos sem hover: celular e tablet touch */
+/* preview dos projetos no celular */
 
 @media (hover: none), (pointer: coarse) {
 
-    .project-tile-button {
+    .project-tile-video {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        -webkit-tap-highlight-color: transparent;
-
+    .project-tile-image {
+        opacity: 0;
     }
 
     .project-tile-summary {
-
         max-height: 75px;
-
         margin-top: 7px;
-
         opacity: 1;
-
         transform: translateY(0);
-
     }
 
     .project-tile-title {
-
         color: #a6e8ba;
-
-    }
-
-    .project-tile-video {
-
-        opacity: 0;
-
-        visibility: hidden;
-
     }
 
 }

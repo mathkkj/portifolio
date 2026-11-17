@@ -371,4 +371,41 @@
 
     }
 
+    // preview dos projetos em dispositivos touch
+
+if (window.matchMedia("(hover: none), (pointer: coarse)").matches) {
+
+    const previews = document.querySelectorAll(".project-tile-video");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            const video = entry.target;
+
+            if (entry.isIntersecting) {
+
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+
+                video.play().catch(() => {});
+
+            } else {
+
+                video.pause();
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.4
+    });
+
+    previews.forEach((video) => {
+        observer.observe(video);
+    });
+
+}
 })();

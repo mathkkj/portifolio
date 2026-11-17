@@ -380,3 +380,42 @@
     }
 
 }
+
+/* ========================================
+   ANIMACOES PARA CELULAR E TOUCH
+======================================== */
+
+@media (hover: none), (pointer: coarse) {
+
+    /* foto */
+    .about-photo-toggle {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .about-photo-toggle:active .about-photo-image.is-active,
+    .about-photo-toggle:focus .about-photo-image.is-active {
+        filter: none;
+        transform: scale(1.03);
+    }
+
+    /* corrigir tamanho da foto no celular */
+    .about-photo-toggle .about-photo-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* habilidades */
+    .skill-list span {
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .skill-list span:active {
+        color: #dce9df;
+        border-color: #718878;
+        background: #71887815;
+    }
+
+}
