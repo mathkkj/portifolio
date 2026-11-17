@@ -309,3 +309,43 @@
     opacity: 1 !important;
     transition-delay: 0s, 0s;
 }
+
+/* ========================================
+   PERSONAGENS - RESPONSIVIDADE MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .floating-characters {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .floating-character {
+        width: clamp(55px, 13vw, 95px);
+        max-width: 22vw;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .floating-character {
+        width: clamp(48px, 15vw, 75px);
+        max-width: 20vw;
+        opacity: 0.75;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .floating-character {
+        width: 52px;
+        max-width: 18vw;
+        opacity: 0.6;
+    }
+
+}

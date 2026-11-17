@@ -2211,3 +2211,30 @@ button:focus-visible {
     }
 
 }
+
+/* projetos centralizados no celular */
+
+@media (max-width: 560px) {
+
+    .projects-container {
+        width: 100%;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+
+        gap: 14px;
+    }
+
+    .project-tile {
+        width: 100%;
+        max-width: 360px;
+    }
+
+}
