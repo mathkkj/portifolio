@@ -8,15 +8,61 @@
     <meta name="theme-color" content="#0c1110">
 
     <title>mathdev.</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/contato.css">
+    <link rel="stylesheet" href="css/sobre_mim.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/personagem.css">
 </head>
 
 <body>
 
+    <!-- TELA DE INICIALIZACAO -->
+    <div id="site-loader">
+
+        <div class="loader-content">
+
+            <h1 class="loader-logo">
+                mathdev<span>.</span>
+            </h1>
+
+            <p data-pt="Carregando projetos..." data-en="Loading projects...">
+                Carregando projetos...
+            </p>
+
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+
+            <span class="loader-percentage">LOADING...</span>
+
+        </div>
+
+    </div>
+
     <div id="tsparticles" aria-hidden="true"></div>
 
-    <!-- barra de navegacao -->
+
+    <!-- PERSONAGENS ANIMADOS -->
+    <div class="floating-characters">
+
+        <div class="floating-character character-one">
+            <div class="orbit-icons" id="orbit-web"></div>
+            <img src="assets/desenhos/personagem-01.png" alt="">
+        </div>
+
+        <div class="floating-character character-two">
+            <div class="orbit-icons" id="orbit-games"></div>
+            <img src="assets/desenhos/personagem-02.png" alt="">
+        </div>
+
+    </div>
+
+
+    <!-- BARRA DE NAVEGACAO -->
     <header class="site-header">
+
         <div class="site-header__inner">
 
             <a href="#inicio" class="site-brand">
@@ -28,64 +74,84 @@
                 id="nav-toggle"
                 aria-label="Abrir menu"
                 aria-expanded="false"
-                aria-controls="main-nav"
-            >
+                aria-controls="main-nav">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </button>
 
             <nav class="site-nav" id="main-nav">
+
                 <a
-                    href="#sobre-mim"
-                    data-pt="Sobre mim"
-                    data-en="About me"
-                >Sobre mim</a>
+                    href="#baixar-cv"
+                    download="mathdev-cv.pdf"
+                    data-pt="Baixar CV"
+                    data-en="Download CV">
+                    Baixar CV
+                </a>
 
                 <a
                     href="#projetos"
                     data-pt="Projetos"
-                    data-en="Projects"
-                >Projetos</a>
+                    data-en="Projects">
+                    Projetos
+                </a>
 
                 <a
                     href="#contato"
                     class="nav-contact"
                     data-pt="Contato"
-                    data-en="Contact"
-                >Contato</a>
+                    data-en="Contact">
+                    Contato
+                </a>
+
             </nav>
 
         </div>
+
     </header>
 
-    <!-- conteudo principal -->
+
+    <!-- CONTEUDO PRINCIPAL -->
     <main id="inicio">
 
-        <!-- grade de projetos -->
+
+        <!-- DESENVOLVIMENTO DE JOGOS -->
+
         <section id="projetos" class="projects-section">
 
             <div class="projects-container">
 
                 <div class="projects-heading">
 
-                    <span class="projects-label">PORTFÓLIO / 01</span>
+                    <span class="projects-label">
+                        PORTFÓLIO / 01
+                    </span>
 
                     <h2
-                        data-pt="Meus projetos"
-                        data-en="My projects"
-                    >Meus projetos</h2>
+                        data-pt="Desenvolvimento de jogos"
+                        data-en="Game development">
+                        Desenvolvimento de jogos
+                    </h2>
 
                     <p
-                        data-pt="Algumas coisas que eu desenvolvi ou estou desenvolvendo."
-                        data-en="Some things I've built or am currently working on."
-                    >
-                        Algumas coisas que eu desenvolvi ou estou desenvolvendo.
+                        data-pt="Uma seleção de projetos que desenvolvi ou participei, explorando programação, Game Design e criação de experiências interativas."
+                        data-en="A selection of projects I've developed or contributed to, exploring programming, Game Design and interactive experiences.">
+
+                        Uma seleção de projetos que desenvolvi ou participei,
+                        explorando programação, Game Design e criação de
+                        experiências interativas.
+
                     </p>
 
                 </div>
 
-                <div class="projects-grid">
+
+                <!-- GRADE DE PROJETOS -->
+                <div class="projects-grid" id="projects-grid">
+
 
                     <!-- PROJETO 01: ROGUENAVE -->
                     <article class="project-tile">
@@ -96,40 +162,33 @@
                             data-project-open="rogue-nave-details"
                             aria-haspopup="dialog"
                             aria-controls="rogue-nave-details"
-                            aria-label="Ver detalhes do RogueNave"
-                        >
+                            aria-label="Ver detalhes do RogueNave">
 
                             <span class="project-tile-media">
 
-                                <!-- imagem inicial do card -->
                                 <img
                                     class="project-tile-image"
-                                    src="assets/projetos/rogue-nave.png"
+                                    src="assets/projetos/roguenave/preview_roguenave-02.png"
                                     alt=""
-                                    loading="lazy"
-                                >
+                                    loading="lazy">
 
-                                <!-- preview em video no hover -->
+                                <!-- PREVIEW DO PROJETO MANTIDO -->
                                 <video
                                     class="project-tile-video"
-                                    data-src="assets/projetos/rogue-nave-preview.mp4"
-                                    poster="assets/projetos/rogue-nave.png"
+                                    src="assets/projetos/roguenave/preview.mp4"
+                                    poster="assets/projetos/roguenave/preview_roguenave-02.png"
                                     muted
                                     loop
                                     playsinline
                                     preload="none"
                                     aria-hidden="true"
-                                    tabindex="-1"
-                                ></video>
+                                    tabindex="-1">
+                                </video>
 
                                 <span class="project-tile-shade"></span>
-
                                 <span class="project-tile-number">01</span>
+                                <span class="project-tile-hint" aria-hidden="true">↗</span>
 
-                                <span class="project-tile-hint"
-                                      aria-hidden="true">↗</span>
-
-                                <!-- titulo e descricao -->
                                 <span class="project-tile-copy">
 
                                     <span class="project-tile-title">
@@ -139,9 +198,11 @@
                                     <span
                                         class="project-tile-summary"
                                         data-pt="Um roguelike com exploração procedural, combate e chefes."
-                                        data-en="A roguelike featuring procedural exploration, combat and bosses."
-                                    >
-                                        Um roguelike com exploração procedural, combate e chefes.
+                                        data-en="A roguelike featuring procedural exploration, combat and bosses.">
+
+                                        Um roguelike com exploração procedural,
+                                        combate e chefes.
+
                                     </span>
 
                                 </span>
@@ -152,11 +213,220 @@
 
                     </article>
 
-                    <!--
-                    PARA ADICIONAR OUTRO PROJETO:
-                    Copie o article acima e crie um dialog
-                    com um ID proprio para os detalhes.
-                    -->
+
+
+                    <!-- PROJETO 02: PESQUE E PEGUE -->
+                    <article class="project-tile">
+
+                        <button
+                            class="project-tile-button"
+                            type="button"
+                            data-project-open="pesque-e-pegue-details"
+                            aria-haspopup="dialog"
+                            aria-controls="pesque-e-pegue-details"
+                            aria-label="Ver detalhes do Pesque e Pegue">
+
+                            <span class="project-tile-media">
+
+                                <img
+                                    class="project-tile-image"
+                                    src="assets/projetos/pesque_e_pegue/icon.png"
+                                    alt=""
+                                    loading="lazy">
+
+                                <!-- PREVIEW DO PROJETO MANTIDO -->
+                                <video
+                                    class="project-tile-video"
+                                    src="assets/projetos/pesque_e_pegue/preview.mp4"
+                                    poster="assets/projetos/pesque_e_pegue/icon.png"
+                                    muted
+                                    loop
+                                    playsinline
+                                    preload="none"
+                                    aria-hidden="true"
+                                    tabindex="-1">
+                                </video>
+
+                                <span class="project-tile-shade"></span>
+                                <span class="project-tile-number">02</span>
+                                <span class="project-tile-hint" aria-hidden="true">↗</span>
+
+                                <span class="project-tile-copy">
+
+                                    <span class="project-tile-title">
+                                        Pesque e Pegue
+                                    </span>
+
+                                    <span
+                                        class="project-tile-summary"
+                                        data-pt="Vencedor da Pizza Jam 2025, Pesque e Pegue é um jogo clicker em que você pesca, vende peixes e compra melhorias para expandir sua produção e acumular riquezas. Desenvolvido utilizando exclusivamente os nós Control da Godot, seguindo as restrições da Jam."
+                                        data-en="Winner of Pizza Jam 2025, Pesque e Pegue is a clicker game where you catch fish, sell them, and purchase upgrades to expand your fishing operation and build wealth. Developed exclusively using Godot's Control nodes, following the Jam's restrictions.">
+
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PROJETO 03: 30 SECONDS TO THE END -->
+                    <article class="project-tile">
+
+                        <button
+                            class="project-tile-button"
+                            type="button"
+                            data-project-open="thirty-seconds-to-the-end-details"
+                            aria-haspopup="dialog"
+                            aria-controls="thirty-seconds-to-the-end-details"
+                            aria-label="Ver detalhes do 30 seconds to the end">
+
+                            <span class="project-tile-media">
+
+                                <img
+                                    class="project-tile-image"
+                                    src="assets/projetos/30seconds/icon.png"
+                                    alt=""
+                                    loading="lazy">
+
+                                <!-- PREVIEW DO PROJETO MANTIDO -->
+                                <video
+                                    class="project-tile-video"
+                                    src="assets/projetos/30seconds/preview.mp4"
+                                    poster="assets/projetos/30seconds/icon.png"
+                                    muted
+                                    loop
+                                    playsinline
+                                    preload="none"
+                                    aria-hidden="true"
+                                    tabindex="-1">
+                                </video>
+
+                                <span class="project-tile-shade"></span>
+                                <span class="project-tile-number">03</span>
+                                <span class="project-tile-hint" aria-hidden="true">↗</span>
+
+                                <span class="project-tile-copy">
+
+                                    <span class="project-tile-title">
+                                        30 seconds to the end
+                                    </span>
+
+                                    <span
+                                        class="project-tile-summary"
+                                        data-pt="Top-down shooter desenvolvido para a GMTK Game Jam 2026, com combate por waves, cronômetro e upgrades roguelike. Idealizei o jogo e programei o gameplay principal, incluindo combate, waves e progressão, em colaboração com a equipe."
+                                        data-en="A top-down shooter developed for GMTK Game Jam 2026, featuring wave-based combat, a timer, and roguelike upgrades. I conceived the game and programmed its core gameplay, including combat, waves, and progression, in collaboration with the team.">
+
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PROJETO 04: DISTORTIA -->
+                    <article class="project-tile">
+
+                        <button
+                            class="project-tile-button"
+                            type="button"
+                            data-project-open="distortia-details"
+                            aria-haspopup="dialog"
+                            aria-controls="distortia-details"
+                            aria-label="Ver detalhes do DISTORTIA">
+
+                            <span class="project-tile-media">
+
+                                <img
+                                    class="project-tile-image"
+                                    src="assets/projetos/distortia/preview.png"
+                                    alt=""
+                                    loading="lazy">
+
+                                <span class="project-tile-shade"></span>
+                                <span class="project-tile-number">04</span>
+                                <span class="project-tile-hint" aria-hidden="true">↗</span>
+
+                                <span class="project-tile-copy">
+
+                                    <span class="project-tile-title">
+                                        DISTORTIA
+                                    </span>
+
+                                    <span
+                                        class="project-tile-summary"
+                                        data-pt="Um projeto de desenvolvimento de jogos."
+                                        data-en="A game development project.">
+
+                                        Um projeto de desenvolvimento de jogos.
+
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+                    </article>
+
+
+
+                    <!-- PROJETO 05: THE ARCANUM CORSAIRES -->
+                    <article class="project-tile">
+
+                        <button
+                            class="project-tile-button"
+                            type="button"
+                            data-project-open="the-arcanum-corsaires-details"
+                            aria-haspopup="dialog"
+                            aria-controls="the-arcanum-corsaires-details"
+                            aria-label="Ver detalhes do The Arcanum Corsaires">
+
+                            <span class="project-tile-media">
+
+                                <img
+                                    class="project-tile-image"
+                                    src="assets/projetos/the-arcanum-corsaires/preview.png"
+                                    alt=""
+                                    loading="lazy">
+
+                                <span class="project-tile-shade"></span>
+                                <span class="project-tile-number">05</span>
+                                <span class="project-tile-hint" aria-hidden="true">↗</span>
+
+                                <span class="project-tile-copy">
+
+                                    <span class="project-tile-title">
+                                        The Arcanum Corsaires
+                                    </span>
+
+                                    <span
+                                        class="project-tile-summary"
+                                        data-pt="Um projeto de jogo independente."
+                                        data-en="An independent game project.">
+
+                                        Um projeto de jogo independente.
+
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+                    </article>
+
 
                 </div>
 
@@ -164,20 +434,371 @@
 
         </section>
 
-        <!-- sobre mim -->
-        <section id="sobre-mim"></section>
 
-        <!-- contato -->
-        <section id="contato"></section>
+
+        <!-- SOBRE MIM -->
+
+        <section id="sobre-mim" class="about-section">
+
+            <div class="about-container">
+
+
+                <!-- APRESENTACAO -->
+                <div class="about-profile">
+
+                    <div class="about-heading">
+
+                        <span class="about-label">
+                            ABOUT / 02
+                        </span>
+
+                        <h2 data-pt="Sobre mim" data-en="About me">
+                            Sobre mim
+                        </h2>
+
+                    </div>
+
+
+                    <!-- FOTO INTERATIVA -->
+                    <div class="about-photo">
+
+                        <button
+                            class="about-photo-toggle"
+                            id="about-photo-toggle"
+                            type="button"
+                            aria-label="Mostrar minha foto real"
+                            aria-pressed="false">
+
+                            <img
+                                src="assets/desenhos/minha-ilustracao.png"
+                                class="about-photo-image is-active"
+                                alt="Meu desenho">
+
+                            <img
+                                src="assets/desenhos/minha-foto.png"
+                                class="about-photo-image"
+                                alt="Minha foto">
+
+                        </button>
+
+                        <span
+                            class="about-photo-hint"
+                            data-pt="Clique na imagem para alternar"
+                            data-en="Click the image to switch">
+
+                            Clique na imagem para alternar
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- DESCRICAO -->
+                    <div class="about-description">
+
+                        <h3
+                            data-pt="Olá, eu sou o Math."
+                            data-en="Hey, I'm Math.">
+                            Olá, eu sou o Math.
+                        </h3>
+
+                        <p
+                            data-pt="Sou estudante concluinte do Ensino Médio integrado ao Técnico em Programação no CEJLL-NAVE, com experiência prática em desenvolvimento de jogos e aplicações web. Trabalho principalmente com programação, Game Design e sistemas de jogo, e também idealizo e lidero projetos, colaborando com equipes de diferentes áreas. Este portfólio reúne projetos que desenvolvi ao longo da minha formação e experimentos que continuo explorando."
+                            data-en="I'm in my final year of a high school program integrated with technical training in Programming at CEJLL-NAVE, with hands-on experience in game development and web applications. I mainly work with programming, Game Design, and game systems, while also coming up with and leading projects alongside cross-disciplinary teams. This portfolio brings together projects I've developed during my studies and experiments I'm still exploring.">
+
+                            Sou estudante concluinte do Ensino Médio integrado ao
+                            Técnico em Programação no CEJLL-NAVE, com experiência
+                            prática em desenvolvimento de jogos e aplicações web.
+                            Trabalho principalmente com programação, Game Design
+                            e sistemas de jogo, e também idealizo e lidero projetos,
+                            colaborando com equipes de diferentes áreas.
+                            Este portfólio reúne projetos que desenvolvi ao longo
+                            da minha formação e experimentos que continuo explorando.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SKILLS E FERRAMENTAS -->
+                <div class="about-skills">
+
+                    <div class="about-heading">
+
+                        <span class="about-label">
+                            ABILITIES / 03
+                        </span>
+
+                        <h2>
+                            Soft & Hard Skills
+                        </h2>
+
+                    </div>
+
+
+                    <!-- HARD SKILLS -->
+                    <div class="skill-group">
+
+                        <div class="skill-group-heading">
+                            <span class="skill-group-number">01</span>
+                            <h3>Hard Skills</h3>
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span>Game Programming</span>
+                            <span>Gameplay Systems</span>
+                            <span>Object-Oriented Programming</span>
+                            <span>Game Design</span>
+                            <span>Level Design</span>
+                            <span>Progression Design</span>
+                            <span>Enemy Systems</span>
+                            <span>GDScript</span>
+                            <span>JavaScript</span>
+                            <span>HTML & CSS</span>
+                            <span>Node.js & Express</span>
+                            <span>REST APIs</span>
+                            <span>Web Development</span>
+                            <span>Video Editing</span>
+                            <span>Technical Demonstrations</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SOFT SKILLS -->
+                    <div class="skill-group">
+
+                        <div class="skill-group-heading">
+                            <span class="skill-group-number">02</span>
+                            <h3>Soft Skills</h3>
+                        </div>
+
+                        <div class="skill-list">
+
+                            <span>Project Leadership</span>
+                            <span>Team Coordination</span>
+                            <span>Interdisciplinary Collaboration</span>
+                            <span>Creative Problem-Solving</span>
+                            <span>Project Planning</span>
+                            <span>Technical Communication</span>
+                            <span>Organization</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FERRAMENTAS -->
+                    <div class="skill-group">
+
+                        <div class="skill-group-heading">
+
+                            <span class="skill-group-number">03</span>
+
+                            <h3 data-pt="Ferramentas" data-en="Tools">
+                                Ferramentas
+                            </h3>
+
+                        </div>
+
+                        <div class="skill-list skill-list-tools">
+
+                            <span>Godot Engine</span>
+                            <span>Construct</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-footer">
+
+                        <span>CONTINUOUSLY LEARNING.</span>
+                        <span>2026 — PRESENT</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- CONTATO -->
+
+        <section id="contato" class="contact-section">
+
+            <div class="contact-container">
+
+                <div class="contact-heading">
+
+                    <span class="projects-label">CONTACT / 04</span>
+
+                    <h2
+                        data-pt="Manda um zap"
+                        data-en="Message me">
+                        Manda um zap
+                    </h2>
+
+                    <p
+                        data-pt="Entre em contato comigo ou confira meus outros projetos."
+                        data-en="Get in touch or check out some of my other projects.">
+
+                        Entre em contato comigo ou confira meus outros projetos.
+
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <!-- EMAIL -->
+                    <a
+                        class="contact-item"
+                        href="mailto:matheuscabralr@gmail.com">
+
+                        <div class="contact-item-heading">
+
+                            <span class="contact-number">01</span>
+
+                            <span class="contact-arrow">↗</span>
+
+                        </div>
+
+                        <div class="contact-item-content">
+
+                            <span>Email</span>
+
+                            <h3>matheuscabralr@gmail.com</h3>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- TELEFONE -->
+                    <a
+                        class="contact-item"
+                        href="tel:+5521985423938">
+
+                        <div class="contact-item-heading">
+
+                            <span class="contact-number">02</span>
+
+                            <span class="contact-arrow">↗</span>
+
+                        </div>
+
+                        <div class="contact-item-content">
+
+                            <span data-pt="Telefone" data-en="Phone">
+                                Telefone
+                            </span>
+
+                            <h3>+55 (21) 98542-3938</h3>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- ITCH.IO -->
+                    <a
+                        class="contact-item"
+                        href="https://mathkkj.itch.io/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <div class="contact-item-heading">
+
+                            <span class="contact-number">03</span>
+
+                            <span class="contact-arrow">↗</span>
+
+                        </div>
+
+                        <div class="contact-item-content">
+
+                            <span>itch.io</span>
+
+                            <h3>mathkkj.itch.io</h3>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- GITHUB -->
+                    <a
+                        class="contact-item"
+                        href="https://github.com/mathkkj"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <div class="contact-item-heading">
+
+                            <span class="contact-number">04</span>
+
+                            <span class="contact-arrow">↗</span>
+
+                        </div>
+
+                        <div class="contact-item-content">
+
+                            <span>GitHub</span>
+
+                            <h3>github.com/mathkkj</h3>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+
+                <div class="contact-footer">
+
+                    <span>MATHDEV.</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
 
     </main>
 
-    <!-- JANELA COMPLETA DO ROGUENAVE -->
+
+
+    <!-- JANELAS DOS PROJETOS -->
+
+
+    <!-- ROGUENAVE -->
+
     <dialog
         id="rogue-nave-details"
         class="project-dialog"
-        aria-labelledby="rogue-nave-details-title"
-    >
+        aria-labelledby="rogue-nave-details-title">
 
         <div class="project-dialog-content">
 
@@ -185,276 +806,1170 @@
                 class="project-dialog-close"
                 type="button"
                 aria-label="Fechar detalhes"
-                data-dialog-close
-            >×</button>
+                data-dialog-close>
+                ×
+            </button>
 
-            <!-- titulo e descricao -->
+
             <div class="project-dialog-heading">
 
-                <span class="projects-label">PROJETO / 01</span>
+                <span class="projects-label">
+                    PROJETO / 01
+                </span>
 
-                <h2 id="rogue-nave-details-title">RogueNave</h2>
+                <h2 id="rogue-nave-details-title">
+                    RogueNave
+                </h2>
 
                 <p
-                    data-pt="RogueNAVE é um roguelite indie brasileiro de ficção científica ambientado em uma escola técnica do Rio de Janeiro. O projeto acompanha estudantes de Programação e Multimídia em um confronto com o Dr. Schmirtz para salvar a escola. Sua proposta combina combate dinâmico, chefes com minigames e estilos de luta distintos: ataques à distância para a personagem de Programação e combate corpo a corpo para a de Multimídia. A geração procedural de fases, desafios e caminhos cria novas combinações a cada partida. O desenvolvimento envolveu sistemas de geração de fases, combate, habilidades e chefes."
-                    data-en="RogueNAVE is a Brazilian indie sci-fi roguelite set in a technical school in Rio de Janeiro. The project follows Programming and Multimedia students in a confrontation with Dr. Schmirtz to save their school. Its design combines fast-paced combat, bosses with minigames, and distinct fighting styles: ranged attacks for the Programming character and melee combat for the Multimedia character. Procedurally generated floors, challenges, and paths create new combinations in every run. Development involved level-generation, combat, ability, and boss systems."
-                >
-                    RogueNAVE é um roguelite indie brasileiro de ficção científica ambientado em uma escola técnica do Rio de Janeiro. O projeto acompanha estudantes de Programação e Multimídia em um confronto com o Dr. Schmirtz para salvar a escola. Sua proposta combina combate dinâmico, chefes com minigames e estilos de luta distintos: ataques à distância para a personagem de Programação e combate corpo a corpo para a de Multimídia. A geração procedural de fases, desafios e caminhos cria novas combinações a cada partida. O desenvolvimento envolveu sistemas de geração de fases, combate, habilidades e chefes.
+                    data-pt="Roguelite de ação ambientado em uma escola brasileira, com combate, exploração e diferentes tipos de inimigos. Idealizei e dirigi o projeto, liderando Game Design e programação, além de coordenar as equipes de arte, áudio, música e narrativa. Atuei principalmente no desenvolvimento de mecânicas, Level Design e sistemas de inimigos."
+                    data-en="Action roguelite set in a Brazilian school, featuring combat, exploration, and various enemy types. I conceived and directed the project, leading Game Design and programming, as well as coordinating the art, audio, music, and narrative teams. My main focus was developing gameplay mechanics, Level Design, and enemy systems.">
+
+                    Roguelite de ação ambientado em uma escola brasileira,
+                    com combate, exploração e diferentes tipos de inimigos.
+                    Idealizei e dirigi o projeto, liderando Game Design e
+                    programação, além de coordenar as equipes de arte,
+                    áudio, música e narrativa. Atuei principalmente no
+                    desenvolvimento de mecânicas, Level Design e sistemas
+                    de inimigos.
+
                 </p>
+
+                <br>
+
+
+                <!-- LINKS DO PROJETO -->
+                <div class="project-actions">
+
+                    <a
+                        id="rogue-nave-github"
+                        class="project-link"
+                        href="https://github.com/mathkkj/ROGUENAVE"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/github/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Ver no GitHub"
+                            data-en="View on GitHub">
+                            Ver no GitHub
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+
+                    <a
+                        id="rogue-nave-itch"
+                        class="project-link"
+                        href="https://mathkkj.itch.io/roguenave"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/itchdotio/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Jogar no itch.io"
+                            data-en="Play on itch.io">
+                            Jogar no itch.io
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+                </div>
 
             </div>
 
-            <!-- GALERIA DE IMAGENS E VIDEOS -->
+
+
+            <!-- GALERIA DE IMAGENS -->
             <section class="project-media-section">
 
                 <div class="project-media-heading">
 
                     <div>
-                        <span class="projects-label">MEDIA / 01</span>
+
+                        <span class="projects-label">
+                            MEDIA / 01
+                        </span>
 
                         <h3
-                            data-pt="Imagens e vídeos"
-                            data-en="Screenshots and videos"
-                        >Imagens e vídeos</h3>
+                            data-pt="Galeria de imagens"
+                            data-en="Image gallery">
+                            Galeria de imagens
+                        </h3>
+
                     </div>
 
                 </div>
 
+
                 <div class="project-media-grid">
+
 
                     <!-- IMAGEM 01 -->
                     <figure class="project-media-item">
 
                         <a
-                            href="assets/projetos/rogue-nave.png"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                            href="assets/projetos/roguenave/foto-01.jpg"
+                            data-image-view>
+
                             <img
-                                src="assets/projetos/rogue-nave.png"
+                                src="assets/projetos/roguenave/foto-01.jpg"
                                 alt="RogueNave - imagem principal"
-                                loading="lazy"
-                            >
+                                loading="lazy">
+
                         </a>
 
                         <figcaption
-                            data-pt="Imagem principal do projeto"
-                            data-en="Main project screenshot"
-                        >
-                            Imagem principal do projeto
+                            data-pt="Concept art dos personagens principais do projeto, apresentados da esquerda para a direita: Multimídia (Rumy), Programador (Onxy/Fable) e Fullstack (Ariel)."
+                            data-en="Concept art of the project's main characters, shown from left to right: Multimedia (Rumy), Programmer (Onxy/Fable), and Fullstack (Ariel).">
+
+                            Concept art dos personagens principais do
+                            projeto, apresentados da esquerda para a
+                            direita: Multimídia (Rumy), Programador
+                            (Onxy/Fable) e Fullstack (Ariel).
+
                         </figcaption>
 
                     </figure>
+
+
 
                     <!-- IMAGEM 02 -->
                     <figure class="project-media-item">
 
                         <a
-                            href="assets/projetos/rogue-nave-2.png"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                            href="assets/projetos/roguenave/foto-02.jpeg"
+                            data-image-view>
+
                             <img
-                                src="assets/projetos/rogue-nave-2.png"
+                                src="assets/projetos/roguenave/foto-02.jpeg"
                                 alt="RogueNave - segunda imagem"
-                                loading="lazy"
-                            >
+                                loading="lazy">
+
                         </a>
 
                         <figcaption
-                            data-pt="Outra imagem do jogo"
-                            data-en="Another game screenshot"
-                        >
-                            Outra imagem do jogo
+                            data-pt="Concept art do personagem Programador (Onxy)."
+                            data-en="Concept art of the Programmer character (Onxy).">
+
+                            Concept art do personagem Programador (Onxy).
+
                         </figcaption>
 
                     </figure>
 
-                    <!-- VIDEO 01 -->
-                    <figure class="project-media-item">
-
-                        <video
-                            controls
-                            playsinline
-                            preload="metadata"
-                            poster="assets/projetos/rogue-nave.png"
-                        >
-                            <source
-                                src="assets/projetos/rogue-nave-gameplay.mp4"
-                                type="video/mp4"
-                            >
-
-                            Seu navegador não suporta vídeos.
-                        </video>
-
-                        <figcaption
-                            data-pt="Gameplay"
-                            data-en="Gameplay"
-                        >Gameplay</figcaption>
-
-                    </figure>
-
-                    <!-- VIDEO 02 -->
-                    <figure class="project-media-item">
-
-                        <video
-                            controls
-                            playsinline
-                            preload="metadata"
-                            poster="assets/projetos/rogue-nave-2.png"
-                        >
-                            <source
-                                src="assets/projetos/rogue-nave-combate.mp4"
-                                type="video/mp4"
-                            >
-
-                            Seu navegador não suporta vídeos.
-                        </video>
-
-                        <figcaption
-                            data-pt="Sistema de combate"
-                            data-en="Combat system"
-                        >Sistema de combate</figcaption>
-
-                    </figure>
-
-                    <!--
-                    PARA ADICIONAR MAIS MIDIA:
-                    Copie uma figure project-media-item.
-                    Pode adicionar quantas imagens e videos quiser.
-                    -->
 
                 </div>
 
             </section>
 
-            <!-- tecnologias -->
+
+
+            <!-- TECNOLOGIAS -->
             <div class="project-tags">
+
                 <span>Godot</span>
                 <span>GDScript</span>
                 <span>Game Dev</span>
                 <span>Game Design</span>
 
-                <span
-                    data-pt="Direção"
-                    data-en="Direction"
-                >Direção</span>
+                <span data-pt="Direção" data-en="Direction">
+                    Direção
+                </span>
+
             </div>
 
-            <!-- estatisticas -->
-            <div class="project-stats">
+
+
+            <!-- ESTATISTICAS -->
+            <div class="project-stats" data-project-stats="rogue-nave">
 
                 <div class="project-stat">
-
                     <span class="stat-symbol">&lt;/&gt;</span>
-
                     <div>
-                        <strong id="rogue-nave-commits">...</strong>
-
-                        <span
-                            data-pt="commits"
-                            data-en="commits"
-                        >commits</span>
+                        <strong data-commits>...</strong>
+                        <span>commits</span>
                     </div>
-
                 </div>
 
                 <div class="project-stat">
-
                     <span class="stat-symbol">↓</span>
-
                     <div>
-                        <strong id="rogue-nave-downloads">...</strong>
-
+                        <strong data-downloads>...</strong>
                         <span
                             data-pt="downloads no itch.io"
-                            data-en="itch.io downloads"
-                        >downloads no itch.io</span>
+                            data-en="itch.io downloads">
+                            downloads no itch.io
+                        </span>
                     </div>
-
                 </div>
 
             </div>
 
-            <!-- grafico de atividade -->
-            <div class="project-chart">
+
+
+            <!-- GRAFICO -->
+            <div class="project-chart" data-project-chart="rogue-nave">
 
                 <div class="project-chart-heading">
 
                     <h4
                         data-pt="Atividade no GitHub"
-                        data-en="GitHub activity"
-                    >Atividade no GitHub</h4>
+                        data-en="GitHub activity">
+                        Atividade no GitHub
+                    </h4>
 
                     <span
                         data-pt="Distribuição dos últimos 100 commits"
-                        data-en="Distribution of the latest 100 commits"
-                    >
+                        data-en="Distribution of the latest 100 commits">
+
                         Distribuição dos últimos 100 commits
+
                     </span>
 
                 </div>
 
                 <div class="project-chart-container">
+
                     <canvas
                         id="rogue-nave-chart"
                         role="img"
-                        aria-label="Gráfico de atividade dos commits"
-                    ></canvas>
+                        aria-label="Gráfico de atividade dos commits">
+                    </canvas>
+
                 </div>
 
             </div>
 
-            <!-- links -->
-            <div class="project-actions">
-
-                <a
-                    id="rogue-nave-github"
-                    class="project-link"
-                    href="https://github.com/mathkkj/ROGUENAVE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span
-                        data-pt="Código no GitHub"
-                        data-en="Source on GitHub"
-                    >Código no GitHub</span>
-
-                    <span class="project-arrow">↗</span>
-                </a>
-
-                <a
-                    id="rogue-nave-itch"
-                    class="project-link"
-                    href="https://mathkkj.itch.io/roguenave"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <span
-                        data-pt="Jogar no itch.io"
-                        data-en="Play on itch.io"
-                    >Jogar no itch.io</span>
-
-                    <span class="project-arrow">↗</span>
-                </a>
-
-            </div>
 
         </div>
 
     </dialog>
 
-    <!-- bibliotecas -->
+
+
+    <!-- PESQUE E PEGUE -->
+
+    <dialog
+        id="pesque-e-pegue-details"
+        class="project-dialog"
+        aria-labelledby="pesque-e-pegue-title">
+
+        <div class="project-dialog-content">
+
+            <button
+                class="project-dialog-close"
+                type="button"
+                aria-label="Fechar detalhes"
+                data-dialog-close>
+                ×
+            </button>
+
+
+            <div class="project-dialog-heading">
+
+                <span class="projects-label">PROJETO / 02</span>
+
+                <h2 id="pesque-e-pegue-title">
+                    Pesque e Pegue
+                </h2>
+
+                <p
+                    data-pt="Um projeto de jogo com temática de pesca. Mais informações sobre o desenvolvimento em breve."
+                    data-en="A fishing-themed game project. More information about its development coming soon.">
+
+                    Um projeto de jogo com temática de pesca.
+                    Mais informações sobre o desenvolvimento em breve.
+
+                </p>
+
+
+                <div class="project-actions">
+
+                    <a
+                        id="pesque-e-pegue-itch"
+                        class="project-link"
+                        href="https://mathkkj.itch.io/pesqueepague"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/itchdotio/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Jogar no itch.io"
+                            data-en="Play on itch.io">
+                            Jogar no itch.io
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GALERIA DE IMAGENS -->
+            <section class="project-media-section">
+
+                <div class="project-media-heading">
+
+                    <div>
+
+                        <span class="projects-label">MEDIA / 02</span>
+
+                        <h3
+                            data-pt="Galeria de imagens"
+                            data-en="Image gallery">
+                            Galeria de imagens
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-media-grid">
+
+
+                    <!-- IMAGEM 01 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/pesque_e_pegue/imagem-01.png"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/pesque_e_pegue/imagem-01.png"
+                                alt="Pesque e Pegue - imagem 01"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption
+                            data-pt="Foto do menu do jogo"
+                            data-en="Game menu screenshot">
+
+                            Foto do menu do jogo
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- IMAGEM 02 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/pesque_e_pegue/imagem-02.png"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/pesque_e_pegue/imagem-02.png"
+                                alt="Pesque e Pegue - imagem 02"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption
+                            data-pt="Print da gameplay"
+                            data-en="Screenshot of the gameplay">
+
+                            Print da gameplay
+
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TECNOLOGIAS -->
+            <div class="project-tags">
+
+                <span>Game Development</span>
+                <span>Game Design</span>
+
+            </div>
+
+
+
+            <!-- ESTATISTICAS -->
+            <div class="project-stats" data-project-stats="pesque-e-pegue">
+
+                <div class="project-stat">
+                    <span class="stat-symbol">&lt;/&gt;</span>
+                    <div>
+                        <strong data-commits>...</strong>
+                        <span>commits</span>
+                    </div>
+                </div>
+
+                <div class="project-stat">
+                    <span class="stat-symbol">↓</span>
+                    <div>
+                        <strong data-downloads>...</strong>
+                        <span
+                            data-pt="downloads no itch.io"
+                            data-en="itch.io downloads">
+                            downloads no itch.io
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </dialog>
+
+
+
+    <!-- 30 SECONDS TO THE END -->
+
+    <dialog
+        id="thirty-seconds-to-the-end-details"
+        class="project-dialog"
+        aria-labelledby="thirty-seconds-to-the-end-title">
+
+        <div class="project-dialog-content">
+
+            <button
+                class="project-dialog-close"
+                type="button"
+                aria-label="Fechar detalhes"
+                data-dialog-close>
+                ×
+            </button>
+
+
+            <div class="project-dialog-heading">
+
+                <span class="projects-label">PROJETO / 03</span>
+
+                <h2 id="thirty-seconds-to-the-end-title">
+                    30 seconds to the end
+                </h2>
+
+                <p
+                    data-pt="Um projeto independente de desenvolvimento de jogos. Mais informações sobre a proposta e o desenvolvimento em breve."
+                    data-en="An independent game development project. More information about its concept and development coming soon.">
+
+                    Um projeto independente de desenvolvimento de jogos.
+                    Mais informações sobre a proposta e o desenvolvimento em breve.
+
+                </p>
+
+
+                <div class="project-actions">
+
+                    <a
+                        id="thirty-seconds-to-the-end-github"
+                        class="project-link"
+                        href="https://github.com/mathkkj/GMTK-Jam"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/github/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Ver no GitHub"
+                            data-en="View on GitHub">
+                            Ver no GitHub
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+
+                    <a
+                        id="thirty-seconds-to-the-end-itch"
+                        class="project-link"
+                        href="https://ishisahh.itch.io/30-seconds-to-the-end"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/itchdotio/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Jogar no itch.io"
+                            data-en="Play on itch.io">
+                            Jogar no itch.io
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GALERIA DE IMAGENS -->
+            <section class="project-media-section">
+
+                <div class="project-media-heading">
+
+                    <div>
+
+                        <span class="projects-label">MEDIA / 03</span>
+
+                        <h3
+                            data-pt="Galeria de imagens"
+                            data-en="Image gallery">
+                            Galeria de imagens
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-media-grid">
+
+
+                    <!-- IMAGEM 01 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/30seconds/menu.jpeg"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/30seconds/menu.jpeg"
+                                alt="30 seconds to the end - imagem 01"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption
+                            data-pt="Menu principal do jogo"
+                            data-en="Game main menu">
+
+                            Menu principal do jogo
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- IMAGEM 02 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/30seconds/gameplay.jpeg"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/30seconds/gameplay.jpeg"
+                                alt="30 seconds to the end - imagem 02"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption
+                            data-pt="Print da gameplay do projeto"
+                            data-en="Screenshot of the project gameplay">
+
+                            Print da gameplay do projeto
+
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TECNOLOGIAS -->
+            <div class="project-tags">
+
+                <span>Game Development</span>
+                <span>Game Design</span>
+
+            </div>
+
+
+
+            <!-- ESTATISTICAS -->
+            <div class="project-stats" data-project-stats="thirty-seconds">
+
+                <div class="project-stat">
+                    <span class="stat-symbol">&lt;/&gt;</span>
+                    <div>
+                        <strong data-commits>...</strong>
+                        <span>commits</span>
+                    </div>
+                </div>
+
+                <div class="project-stat">
+                    <span class="stat-symbol">↓</span>
+                    <div>
+                        <strong data-downloads>...</strong>
+                        <span
+                            data-pt="downloads no itch.io"
+                            data-en="itch.io downloads">
+                            downloads no itch.io
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- GRAFICO -->
+            <div class="project-chart" data-project-chart="thirty-seconds">
+
+                <div class="project-chart-heading">
+
+                    <h4
+                        data-pt="Atividade no GitHub"
+                        data-en="GitHub activity">
+                        Atividade no GitHub
+                    </h4>
+
+                    <span
+                        data-pt="Distribuição dos últimos 100 commits"
+                        data-en="Distribution of the latest 100 commits">
+
+                        Distribuição dos últimos 100 commits
+
+                    </span>
+
+                </div>
+
+
+                <div class="project-chart-container">
+
+                    <canvas
+                        id="thirty-seconds-to-the-end-chart"
+                        role="img"
+                        aria-label="Gráfico de atividade dos commits">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </dialog>
+
+
+
+    <!-- DISTORTIA -->
+
+    <dialog
+        id="distortia-details"
+        class="project-dialog"
+        aria-labelledby="distortia-title">
+
+        <div class="project-dialog-content">
+
+            <button
+                class="project-dialog-close"
+                type="button"
+                aria-label="Fechar detalhes"
+                data-dialog-close>
+                ×
+            </button>
+
+
+            <div class="project-dialog-heading">
+
+                <span class="projects-label">PROJETO / 04</span>
+
+                <h2 id="distortia-title">
+                    Distortia
+                </h2>
+
+                <p
+                    data-pt="Um projeto de desenvolvimento de jogos. Mais informações sobre o projeto em breve."
+                    data-en="A game development project. More information coming soon.">
+
+                    Um projeto de desenvolvimento de jogos.
+                    Mais informações sobre o projeto em breve.
+
+                </p>
+
+                <div class="project-actions">
+
+                    <a
+                        id="distortia-itch"
+                        class="project-link"
+                        href="https://mathkkj.itch.io/distortia"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/itchdotio/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Ver no itch.io"
+                            data-en="View on itch.io">
+                            Ver no itch.io
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GALERIA DE IMAGENS -->
+            <section class="project-media-section">
+
+                <div class="project-media-heading">
+
+                    <div>
+
+                        <span class="projects-label">MEDIA / 04</span>
+
+                        <h3
+                            data-pt="Galeria de imagens"
+                            data-en="Image gallery">
+                            Galeria de imagens
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-media-grid">
+
+
+                    <!-- IMAGEM 01 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/distortia/foto-01.png"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/distortia/foto-01.png"
+                                alt="DISTORTIA - imagem 01"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption>
+                            Imagem do projeto DISTORTIA.
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- IMAGEM 02 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/distortia/foto-02.png"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/distortia/foto-02.png"
+                                alt="DISTORTIA - imagem 02"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption>
+                            Outra imagem do projeto.
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TECNOLOGIAS -->
+            <div class="project-tags">
+
+                <span>Game Development</span>
+                <span>Game Design</span>
+
+            </div>
+
+
+
+            <!-- ESTATISTICAS -->
+            <div class="project-stats" data-project-stats="distortia">
+
+                <div class="project-stat">
+                    <span class="stat-symbol">&lt;/&gt;</span>
+                    <div>
+                        <strong data-commits>...</strong>
+                        <span>commits</span>
+                    </div>
+                </div>
+
+                <div class="project-stat">
+                    <span class="stat-symbol">↓</span>
+                    <div>
+                        <strong data-downloads>...</strong>
+                        <span
+                            data-pt="downloads no itch.io"
+                            data-en="itch.io downloads">
+                            downloads no itch.io
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </dialog>
+
+
+
+    <!-- THE ARCANUM CORSAIRES -->
+
+    <dialog
+        id="the-arcanum-corsaires-details"
+        class="project-dialog"
+        aria-labelledby="the-arcanum-corsaires-title">
+
+        <div class="project-dialog-content">
+
+            <button
+                class="project-dialog-close"
+                type="button"
+                aria-label="Fechar detalhes"
+                data-dialog-close>
+                ×
+            </button>
+
+
+            <div class="project-dialog-heading">
+
+                <span class="projects-label">PROJETO / 05</span>
+
+                <h2 id="the-arcanum-corsaires-title">
+                    the arcanum Corsaires
+                </h2>
+
+                <p
+                    data-pt="Um projeto de jogo independente. Mais informações sobre o desenvolvimento em breve."
+                    data-en="An independent game project. More information about its development coming soon.">
+
+                    Um projeto de jogo independente.
+                    Mais informações sobre o desenvolvimento em breve.
+
+                </p>
+
+
+                <div class="project-actions">
+
+                    <a
+                        id="the-arcanum-corsaires-github"
+                        class="project-link"
+                        href="https://github.com/Night-22/projeto_gg"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/github/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Ver no GitHub"
+                            data-en="View on GitHub">
+                            Ver no GitHub
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+
+                    <a
+                        id="the-arcanum-corsaires-itch"
+                        class="project-link"
+                        href="https://mathkkj.itch.io/the-arcane-corsaires"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img
+                            class="project-link-icon"
+                            src="https://cdn.simpleicons.org/itchdotio/a6e8ba"
+                            alt=""
+                            aria-hidden="true">
+
+                        <span
+                            data-pt="Jogar no itch.io"
+                            data-en="Play on itch.io">
+                            Jogar no itch.io
+                        </span>
+
+                        <span class="project-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GALERIA DE IMAGENS -->
+            <section class="project-media-section">
+
+                <div class="project-media-heading">
+
+                    <div>
+
+                        <span class="projects-label">MEDIA / 05</span>
+
+                        <h3
+                            data-pt="Galeria de imagens"
+                            data-en="Image gallery">
+                            Galeria de imagens
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-media-grid">
+
+
+                    <!-- IMAGEM 01 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/the-arcanum-corsaires/foto-01.png"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/the-arcanum-corsaires/foto-01.png"
+                                alt="the arcanum Corsaires - imagem 01"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption>
+                            Imagem do projeto.
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- IMAGEM 02 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/the-arcanum-corsaires/foto-02.png"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/the-arcanum-corsaires/foto-02.png"
+                                alt="the arcanum Corsaires - imagem 02"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption>
+                            Outra imagem do projeto.
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- TECNOLOGIAS -->
+            <div class="project-tags">
+
+                <span>Game Development</span>
+                <span>Game Design</span>
+
+            </div>
+
+
+
+            <!-- ESTATISTICAS -->
+            <div class="project-stats" data-project-stats="the-arcanum-corsaires">
+
+                <div class="project-stat">
+                    <span class="stat-symbol">&lt;/&gt;</span>
+                    <div>
+                        <strong data-commits>...</strong>
+                        <span>commits</span>
+                    </div>
+                </div>
+
+                <div class="project-stat">
+                    <span class="stat-symbol">↓</span>
+                    <div>
+                        <strong data-downloads>...</strong>
+                        <span
+                            data-pt="downloads no itch.io"
+                            data-en="itch.io downloads">
+                            downloads no itch.io
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- GRAFICO -->
+            <div class="project-chart" data-project-chart="the-arcanum-corsaires">
+
+                <div class="project-chart-heading">
+
+                    <h4
+                        data-pt="Atividade no GitHub"
+                        data-en="GitHub activity">
+                        Atividade no GitHub
+                    </h4>
+
+                    <span
+                        data-pt="Distribuição dos últimos 100 commits"
+                        data-en="Distribution of the latest 100 commits">
+
+                        Distribuição dos últimos 100 commits
+
+                    </span>
+
+                </div>
+
+
+                <div class="project-chart-container">
+
+                    <canvas
+                        id="the-arcanum-corsaires-chart"
+                        role="img"
+                        aria-label="Gráfico de atividade dos commits">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </dialog>
+
+
+
+    <!-- VISUALIZADOR DE IMAGENS -->
+
+    <dialog id="image-viewer" class="image-viewer">
+
+        <button
+            class="image-viewer-close"
+            type="button"
+            aria-label="Fechar imagem">
+            ×
+        </button>
+
+        <img
+            class="image-viewer-image"
+            src=""
+            alt="">
+
+    </dialog>
+
+
+
+    <!-- BIBLIOTECAS -->
+
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://static.itch.io/api.js"></script>
 
-    <!-- scripts do site -->
+
+
+    <!-- SCRIPTS DO SITE -->
+
     <script src="scripts/background.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/personagens.js"></script>
+    <script src="scripts/orbit_icons.js"></script>
+    <script src="scripts/reveal.js"></script>
+    <script src="scripts/loader.js"></script>
+    <script src="scripts/visualizador.js"></script>
 
-    <!-- scripts das APIs -->
+    <!-- Mantido para preservar o funcionamento dos previews -->
+    <script src="scripts/video_player.js"></script>
+
+    <script src="scripts/about.js"></script>
+    <script src="scripts/project-reveal.js"></script>
+
+
+
+    <!-- SCRIPTS DAS APIS -->
+
     <script src="scripts/itch.js"></script>
     <script src="scripts/projetos.js"></script>
     <script src="scripts/portifolio.js"></script>

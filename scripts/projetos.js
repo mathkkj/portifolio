@@ -1,58 +1,160 @@
+// CONFIGURACAO DOS PROJETOS
 
-const usuarioGithub = "mathkkj";
-const repositorioGithub = "ROGUENAVE";
+const projetosEstatisticas = {
 
-const baseGithub =
-    `https://api.github.com/repos/${usuarioGithub}/${repositorioGithub}`;
+    "rogue-nave": {
+        github: {
+            usuario: "mathkkj",
+            repositorio: "ROGUENAVE"
+        }
+    },
 
-const tempoCache = 60 * 60 * 1000;
+    "pesque-e-pegue": {
+        github: null
+    },
 
-function lerCacheGithub() {
+    "thirty-seconds": {
+        github: {
+            usuario: "mathkkj",
+            repositorio: "GMTK-Jam"
+        }
+    },
+
+    "distortia": {
+        github: null
+    },
+
+    "the-arcanum-corsaires": {
+        github: {
+            usuario: "Night-22",
+            repositorio: "projeto_gg"
+        }
+    }
+
+};
+
+
+// CACHE DO GITHUB
+
+const tempoCacheGithub = 60 * 60 * 1000;
+
+function lerCacheGithub(projeto) {
+
     try {
+
         const cache = JSON.parse(
-            localStorage.getItem("rogue-nave-estatisticas")
+            localStorage.getItem(`github-${projeto}`)
         );
 
-        if (cache && Date.now() - cache.tempo < tempoCache) {
+        if (cache && Date.now() - cache.tempo < tempoCacheGithub) {
             return cache.dados;
         }
+
     } catch (erro) {
         // continua sem cache
     }
 
     return null;
+
 }
 
-function salvarCacheGithub(dados) {
+
+function salvarCacheGithub(projeto, dados) {
+
     try {
+
         localStorage.setItem(
-            "rogue-nave-estatisticas",
+            `github-${projeto}`,
             JSON.stringify({
                 tempo: Date.now(),
                 dados: dados
             })
         );
+
     } catch (erro) {
-        // o site continua funcionando sem cache
+        // continua sem cache
     }
+
 }
 
-function mostrarGrafico(dados) {
-    const canvas = document.getElementById("rogue-nave-chart");
 
-    if (!canvas || typeof Chart === "undefined") {
-        return;
+// AGRUPAMENTO DOS COMMITS
+
+function agruparCommits(commits) {
+
+    const contagem = {};
+
+    commits.forEach((item) => {
+
+        const dataCommit =
+            item.commit.author?.date ||
+            item.commit.committer?.date;
+
+        if (!dataCommit) return;
+
+        const data = new Date(dataCommit);
+
+        const chave =
+            `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, "0")}`;
+
+        contagem[chave] = (contagem[chave] || 0) + 1;
+
+    });
+
+    const meses = Object.keys(contagem).sort();
+
+    const idioma = document.documentElement.lang.startsWith("en")
+        ? "en-US"
+        : "pt-BR";
+
+    return {
+
+        meses: meses.map((mes) => {
+
+            const partes = mes.split("-").map(Number);
+
+            return new Intl.DateTimeFormat(idioma, {
+                month: "short",
+                year: "2-digit"
+            }).format(new Date(partes[0], partes[1] - 1, 1));
+
+        }),
+
+        quantidades: meses.map((mes) => contagem[mes])
+
+    };
+
+}
+
+
+// GRAFICOS
+
+function mostrarGrafico(projeto, dados) {
+
+    const container = document.querySelector(
+        `[data-project-chart="${projeto}"]`
+    );
+
+    const canvas = container?.querySelector("canvas");
+
+    if (!canvas || typeof Chart === "undefined") return;
+
+    if (!window.graficosProjetos) {
+        window.graficosProjetos = {};
     }
 
-    if (window.graficoRogueNave) {
-        window.graficoRogueNave.destroy();
+    if (window.graficosProjetos[projeto]) {
+        window.graficosProjetos[projeto].destroy();
     }
 
-    window.graficoRogueNave = new Chart(canvas, {
+    window.graficosProjetos[projeto] = new Chart(canvas, {
+
         type: "bar",
 
         data: {
+
             labels: dados.meses,
+
             datasets: [{
                 label: "Commits",
                 data: dados.quantidades,
@@ -61,9 +163,11 @@ function mostrarGrafico(dados) {
                 borderRadius: 5,
                 borderSkipped: false
             }]
+
         },
 
         options: {
+
             responsive: true,
             maintainAspectRatio: false,
 
@@ -74,6 +178,7 @@ function mostrarGrafico(dados) {
             },
 
             scales: {
+
                 x: {
                     grid: {
                         display: false
@@ -99,76 +204,52 @@ function mostrarGrafico(dados) {
                         display: false
                     }
                 }
+
             }
-        }
-    });
-}
 
-function agruparCommits(commits) {
-    const contagem = {};
-
-    commits.forEach((item) => {
-        const dataCommit =
-            item.commit.author?.date ||
-            item.commit.committer?.date;
-
-        if (!dataCommit) {
-            return;
         }
 
-        const data = new Date(dataCommit);
-
-        const chave =
-            `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, "0")}`;
-
-        contagem[chave] = (contagem[chave] || 0) + 1;
     });
 
-    const meses = Object.keys(contagem).sort();
-
-    const idioma = document.documentElement.lang.startsWith("en")
-        ? "en-US"
-        : "pt-BR";
-
-    return {
-        meses: meses.map((mes) => {
-            const partes = mes.split("-").map(Number);
-
-            return new Intl.DateTimeFormat(idioma, {
-                month: "short",
-                year: "2-digit"
-            }).format(new Date(partes[0], partes[1] - 1, 1));
-        }),
-
-        quantidades: meses.map((mes) => contagem[mes])
-    };
 }
 
-function mostrarCommits(dados) {
-    const elemento = document.getElementById("rogue-nave-commits");
 
-    if (elemento) {
-        elemento.textContent = String(dados.total);
-    }
+// CARREGAR COMMITS DE CADA PROJETO
 
-    mostrarGrafico(dados.grafico);
-}
+async function carregarCommitsProjeto(projeto, config) {
 
-async function carregarCommits() {
-    const elemento = document.getElementById("rogue-nave-commits");
+    const bloco = Array.from(
+        document.querySelectorAll("[data-project-stats]")
+    ).find((item) => item.dataset.projectStats === projeto);
 
-    if (!elemento) {
+    const elemento = bloco?.querySelector("[data-commits]");
+
+    if (!elemento) return;
+
+    if (!config.github) {
+        elemento.textContent = "—";
         return;
     }
 
-    const cache = lerCacheGithub();
+    const cache = lerCacheGithub(projeto);
 
     if (cache) {
-        mostrarCommits(cache);
+
+        elemento.textContent = String(cache.total);
+        mostrarGrafico(projeto, cache.grafico);
+
         return;
+
     }
 
     try {
+
+        const usuario = config.github.usuario;
+        const repositorio = config.github.repositorio;
+
+        const baseGithub =
+            `https://api.github.com/repos/${usuario}/${repositorio}`;
+
         const resposta = await fetch(
             `${baseGithub}/commits?per_page=100`,
             {
@@ -179,23 +260,31 @@ async function carregarCommits() {
         );
 
         if (!resposta.ok) {
-            throw new Error("Nao foi possivel consultar o GitHub.");
+            throw new Error("Nao foi possivel consultar o repositorio.");
         }
 
         const commits = await resposta.json();
+
         const link = resposta.headers.get("Link") || "";
-        const ultimoLink = link.match(/<([^>]+)>;\s*rel="?last"?/);
+
+        const ultimoLink = link.match(
+            /<([^>]+)>;\s*rel="?last"?/
+        );
 
         let total;
 
         if (commits.length === 0) {
+
             total = 0;
+
         } else if (ultimoLink) {
+
             const ultimaPagina = Number(
                 new URL(ultimoLink[1]).searchParams.get("page") || 1
             );
 
             if (ultimaPagina > 1) {
+
                 const respostaFinal = await fetch(
                     `${baseGithub}/commits?per_page=100&page=${ultimaPagina}`,
                     {
@@ -206,19 +295,25 @@ async function carregarCommits() {
                 );
 
                 if (!respostaFinal.ok) {
-                    throw new Error("Nao foi possivel contar os commits.");
+                    throw new Error("Erro ao contar os commits.");
                 }
 
                 const commitsFinais = await respostaFinal.json();
 
                 total = (ultimaPagina - 1) * 100 + commitsFinais.length;
+
             } else {
+
                 total = commits.length;
+
             }
+
         } else {
+
             total = commits.length === 100
                 ? "100+"
                 : commits.length;
+
         }
 
         const dados = {
@@ -226,52 +321,95 @@ async function carregarCommits() {
             grafico: agruparCommits(commits)
         };
 
-        salvarCacheGithub(dados);
-        mostrarCommits(dados);
+        salvarCacheGithub(projeto, dados);
+
+        elemento.textContent = String(dados.total);
+
+        mostrarGrafico(projeto, dados.grafico);
 
     } catch (erro) {
+
         elemento.textContent = "—";
-        console.error("Erro nas estatisticas do GitHub:", erro);
+
+        console.error(
+            `Erro nos commits de ${projeto}:`,
+            erro
+        );
+
     }
+
 }
 
-async function carregarDownloadsItch() {
-    const elemento = document.getElementById("rogue-nave-downloads");
 
-    if (!elemento) {
-        return;
-    }
+// CARREGAR DOWNLOADS DO ITCH.IO
+
+
+async function carregarDownloadsItch() {
 
     try {
-        const resposta = await fetch("./dados/estatisticas.json", {
-            cache: "no-store"
-        });
+
+        const resposta = await fetch(
+            `./dados/estatisticas.json?t=${Date.now()}`,
+            { cache: "no-store" }
+        );
 
         if (!resposta.ok) {
-            throw new Error("Estatisticas do itch.io indisponiveis.");
+            throw new Error("Erro ao carregar estatisticas.");
         }
 
         const dados = await resposta.json();
-
-        if (
-            typeof dados.itch_downloads !== "number" ||
-            !Number.isFinite(dados.itch_downloads)
-        ) {
-            throw new Error("Numero de downloads invalido.");
-        }
+        const downloads = dados.downloads || {};
 
         const idioma = document.documentElement.lang.startsWith("en")
             ? "en-US"
             : "pt-BR";
 
-        elemento.textContent = new Intl.NumberFormat(idioma)
-            .format(dados.itch_downloads);
+        document.querySelectorAll("[data-project-stats]").forEach((bloco) => {
+
+            const projeto = bloco.dataset.projectStats;
+            const elemento = bloco.querySelector("[data-downloads]");
+
+            if (!elemento) return;
+
+            const total = downloads[projeto];
+
+            if (typeof total !== "number") {
+                elemento.textContent = "—";
+                return;
+            }
+
+            elemento.textContent = new Intl.NumberFormat(idioma)
+                .format(total);
+
+        });
 
     } catch (erro) {
-        elemento.textContent = "—";
-        console.error("Erro nos downloads do itch.io:", erro);
+
+        document.querySelectorAll("[data-downloads]").forEach((elemento) => {
+            elemento.textContent = "—";
+        });
+
+        console.error("Erro nos downloads:", erro);
+
     }
+
 }
 
-carregarCommits();
-carregarDownloadsItch();
+
+
+// INICIALIZAR ESTATISTICAS
+
+async function carregarEstatisticasProjetos() {
+
+    const tarefasGithub = Object.entries(projetosEstatisticas).map(
+        ([projeto, config]) => carregarCommitsProjeto(projeto, config)
+    );
+
+    await Promise.all([
+        ...tarefasGithub,
+        carregarDownloadsItch()
+    ]);
+
+}
+
+carregarEstatisticasProjetos();

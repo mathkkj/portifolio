@@ -1,0 +1,382 @@
+
+/* ========================================
+   SOBRE MIM
+======================================== */
+
+.about-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 24px;
+    background: #0c0f0e;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 620px;
+    margin: 0 auto;
+
+    background: transparent;
+}
+
+
+/* ========================================
+   ELEMENTOS COMPARTILHADOS
+======================================== */
+
+.about-profile,
+.about-skills {
+    padding: 32px 42px;
+}
+
+.about-heading {
+    margin-bottom: 32px;
+}
+
+.about-label {
+    display: block;
+    margin-bottom: 12px;
+
+    color: #b9a5ff;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.about-heading h2 {
+    margin: 0;
+
+    color: #e8eae8;
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+
+/* ========================================
+   APRESENTACAO
+======================================== */
+
+.about-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-right: 1px solid #292e2b;
+}
+
+.about-profile .about-heading {
+    align-self: flex-start;
+    width: 100%;
+}
+
+
+/* FOTO */
+
+.about-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    margin: 4px 0 32px;
+}
+
+.about-photo-toggle {
+    position: relative;
+    display: block;
+
+    width: clamp(160px, 19vw, 215px);
+    aspect-ratio: 1 / 1;
+
+    padding: 0;
+    overflow: hidden;
+
+    background: #191e1b;
+    border: 1px solid #343b36;
+    border-radius: 2px;
+
+    cursor: pointer;
+}
+
+.about-photo-image {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    filter: grayscale(100%);
+    transform: scale(1.02);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s ease,
+        filter 0.4s ease,
+        visibility 0.3s;
+}
+
+.about-photo-image.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.about-photo-toggle:hover .about-photo-image.is-active {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+.about-photo-toggle:focus-visible {
+    outline: 1px solid #91b99c;
+    outline-offset: 4px;
+}
+
+.about-photo-hint {
+    color: #737b75;
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+
+/* TEXTO */
+
+.about-description {
+    width: 100%;
+    max-width: 460px;
+}
+
+.about-description h3 {
+    margin: 0 0 14px;
+
+    color: #e5e8e5;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+.about-description p {
+    margin: 0;
+
+    color: #a3aaa4;
+    font-size: 0.9rem;
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.about-skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-skills .about-heading {
+    margin-bottom: 18px;
+}
+
+.skill-group {
+    padding: 21px 0;
+    border-top: 1px solid #292e2b;
+}
+
+.skill-group-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.skill-group-number {
+    color: #819b87;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.skill-group-heading h3 {
+    margin: 0;
+
+    color: #e1e5e1;
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+
+
+/* TAGS DAS SKILLS */
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 9px;
+}
+
+.skill-list span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 9px;
+
+    color: #aeb7b0;
+    background: transparent;
+    border: 1px solid #353c37;
+    border-radius: 2px;
+
+    font-size: 0.75rem;
+    line-height: 1.3;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.skill-list span:hover {
+    color: #dce9df;
+    border-color: #718878;
+}
+
+
+/* RODAPE */
+
+.about-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-top: auto;
+    padding-top: 20px;
+
+    border-top: 1px solid #292e2b;
+
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .about-section {
+        padding: 75px 20px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-profile {
+        border-right: none;
+        border-bottom: 1px solid #292e2b;
+    }
+
+    .about-profile,
+    .about-skills {
+        padding: 35px 25px;
+    }
+
+    .about-photo img {
+        width: 200px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .about-section {
+        padding: 55px 16px;
+    }
+
+    .about-profile,
+    .about-skills {
+        padding: 28px 10px;
+    }
+
+    .about-heading h2 {
+        font-size: 2rem;
+    }
+
+    .about-photo {
+        margin: 4px 0 26px;
+    }
+
+    .about-photo img {
+        width: 180px;
+    }
+
+    .about-description p {
+        font-size: 0.87rem;
+        line-height: 1.8;
+    }
+
+    .skill-list {
+        gap: 7px;
+    }
+
+    .skill-list span {
+        padding: 5px 8px;
+        font-size: 0.72rem;
+    }
+
+    .about-footer {
+        flex-direction: column;
+        font-size: 0.6rem;
+    }
+
+}
+
+
+/* ========================================
+   ANIMACAO DE ENTRADA
+======================================== */
+
+.about-section.about-reveal-ready .about-profile,
+.about-section.about-reveal-ready .about-skills {
+    opacity: 0;
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+
+.about-section.about-reveal-ready .about-skills {
+    transition-delay: 0.12s;
+}
+
+.about-section.about-reveal-ready .about-profile.is-visible,
+.about-section.about-reveal-ready .about-skills.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-section.about-reveal-ready .about-profile,
+    .about-section.about-reveal-ready .about-skills {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}

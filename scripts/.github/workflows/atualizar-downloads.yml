@@ -1,0 +1,110 @@
+name: Atualizar downloads do itch.io
+
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Consultar itch.io
+        env:
+          ITCH_API_KEY: ${{ secrets.ITCH_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          import json
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlsplit
+          from datetime import datetime, timezone
+
+          chave = os.environ.get("ITCH_API_KEY")
+
+          if not chave:
+              raise SystemExit("ITCH_API_KEY nao configurada.")
+
+          projetos = {
+              "rogue-nave": "https://mathkkj.itch.io/roguenave",
+              "pesque-e-pegue": "https://mathkkj.itch.io/pesqueepague",
+              "thirty-seconds": "https://ishisahh.itch.io/30-seconds-to-the-end",
+              "distortia": "https://mathkkj.itch.io/distortia",
+              "the-arcanum-corsaires": "https://mathkkj.itch.io/the-arcane-corsaires"
+          }
+
+          def normalizar(url):
+              partes = urlsplit(url)
+              host = (partes.hostname or "").lower()
+              host = host.removeprefix("www.")
+              caminho = partes.path.strip("/")
+              return f"{host}/{caminho}".lower()
+
+          consulta = Request(
+              "https://api.itch.io/profile/games",
+              headers={
+                  "Authorization": f"Bearer {chave}",
+                  "Accept": "application/json"
+              }
+          )
+
+          with urlopen(consulta, timeout=30) as resposta:
+              dados = json.loads(resposta.read())
+
+          if "errors" in dados:
+              raise SystemExit(str(dados["errors"]))
+
+          downloads = {
+              projeto: None for projeto in projetos
+          }
+
+          urls = {
+              normalizar(url): projeto
+              for projeto, url in projetos.items()
+          }
+
+          for jogo in dados.get("games", []):
+              endereco = normalizar(jogo.get("url", ""))
+
+              if endereco in urls:
+                  nome = urls[endereco]
+                  downloads[nome] = int(jogo.get("downloads_count", 0))
+
+          resultado = {
+              "updated_at": datetime.now(timezone.utc).isoformat(),
+              "downloads": downloads
+          }
+
+          caminho = Path("dados/estatisticas.json")
+          caminho.parent.mkdir(parents=True, exist_ok=True)
+
+          caminho.write_text(
+              json.dumps(resultado, indent=4, ensure_ascii=False) + "\n",
+              encoding="utf-8"
+          )
+
+          print(json.dumps(resultado, indent=4))
+          PY
+
+      - name: Salvar atualizacao
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add dados/estatisticas.json
+
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteracao nos downloads."
+            exit 0
+          fi
+
+          git commit -m "Atualiza estatisticas do itch.io"
+          git push

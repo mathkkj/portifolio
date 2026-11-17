@@ -1,0 +1,311 @@
+/* personagens decorativos */
+.floating-characters {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+
+    overflow: hidden;
+    pointer-events: none;
+    
+}
+
+.floating-character {
+    position: absolute;
+    z-index: 1;
+
+    width: clamp(120px, 12vw, 180px);
+
+    --orbit-size: 270px;
+    --icon-size: 30px;
+
+    pointer-events: auto !important;
+    cursor: pointer;
+
+    transform: translate3d(
+        var(--mouse-x, 0px),
+        var(--mouse-y, 0px),
+        0
+    );
+
+    transition:
+    transform 0.25s ease-out,
+    opacity 0.3s ease 0.9s;
+    will-change: transform;
+}
+
+/* imagens dos personagens */
+
+.floating-character > img {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+/* personagem 01 */
+
+.character-one {
+    top: 20%;
+    right: 5%;
+}
+
+.character-one > img {
+    animation: float-one 5s ease-in-out infinite;
+}
+
+/* personagem 02 */
+
+.character-two {
+    top: 65%;
+    left: 5%;
+    width: clamp(120px, 12vw, 180px);
+}
+
+.character-two > img {
+    animation: float-two 6s ease-in-out infinite;
+}
+
+/* movimentos dos personagens */
+
+@keyframes float-one {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(4deg);
+    }
+}
+
+@keyframes float-two {
+    0%, 100% {
+        transform: translateY(0) rotate(4deg);
+    }
+
+    50% {
+        transform: translateY(14px) rotate(-5deg);
+    }
+}
+
+/* orbitas dos icones */
+
+.orbit-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+
+    width: var(--orbit-size);
+    height: var(--orbit-size);
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+    animation: orbit-spin 30s linear infinite;
+}
+
+.orbit-icon {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--icon-size);
+    height: var(--icon-size);
+
+    opacity: 0.85;
+
+    transform: translate(-50%, -50%);
+    animation: orbit-counter 30s linear infinite;
+}
+
+.orbit-icon img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    animation: none;
+}
+
+/* icones com fundo */
+
+.orbit-icon-com-fundo {
+    padding: 5px;
+
+    background: #ffffff;
+    border-radius: 50%;
+
+    box-sizing: border-box;
+}
+
+/* rotacao das orbitas */
+
+@keyframes orbit-spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes orbit-counter {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+
+/* celulares e tablets */
+
+@media (max-width: 700px) {
+
+    .floating-character {
+        --orbit-size: clamp(190px, 55vw, 250px);
+        --icon-size: clamp(19px, 5vw, 25px);
+    }
+
+    .character-one {
+        top: 13%;
+        right: clamp(65px, 20vw, 105px);
+        width: clamp(95px, 25vw, 125px);
+    }
+
+    .character-two {
+        bottom: 12%;
+        left: clamp(65px, 20vw, 105px);
+        width: clamp(95px, 25vw, 125px);
+    }
+
+
+
+}
+
+/* celulares e tablets */
+@media (max-width: 700px) {
+
+    .floating-character {
+        --orbit-size: clamp(190px, 55vw, 250px);
+        --icon-size: clamp(19px, 5vw, 25px);
+    }
+
+    .character-one {
+        top: 10%;
+        right: clamp(35px, 12vw, 65px);
+        width: clamp(95px, 25vw, 125px);
+    }
+
+    .character-two {
+        top: auto;
+        bottom: 10%;
+        left: clamp(65px, 20vw, 105px);
+        width: clamp(95px, 25vw, 125px);
+    }
+
+}
+
+/* celulares pequenos */
+@media (max-width: 380px) {
+
+    .floating-character {
+        --orbit-size: 185px;
+        --icon-size: 18px;
+    }
+
+    .character-one {
+        top: 12%;
+        right: 30px;
+        width: 95px;
+    }
+
+    .character-two {
+        top: auto;
+        bottom: 12%;
+        left: 55px;
+        width: 95px;
+    }
+
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .floating-character > img,
+    .orbit-icons,
+    .orbit-icon {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+/* interacao dos personagens */
+
+.floating-character {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.floating-character > img {
+    opacity: 1;
+}
+
+/* tween ao clicar */
+
+.character-one > img.click-tween {
+    animation:
+        float-one 5s ease-in-out infinite,
+        character-click 0.4s ease;
+}
+
+.character-two > img.click-tween {
+    animation:
+        float-two 6s ease-in-out infinite,
+        character-click 0.4s ease;
+}
+
+@keyframes character-click {
+    0%, 100% {
+        scale: 1;
+    }
+
+    35% {
+        scale: 1.15;
+    }
+
+    65% {
+        scale: 0.95;
+    }
+}
+
+/* OPACIDADE DOS PERSONAGENS */
+
+.floating-character {
+    opacity: 0.7 !important;
+
+    transition:
+        opacity 0.7s ease 0.9s,
+        transform 0.25s ease-out;
+}
+
+/* INTERACAO */
+
+.floating-character:hover,
+.floating-character:active,
+.floating-character.is-highlighted,
+.floating-character:focus-within {
+    opacity: 1 !important;
+    transition-delay: 0s, 0s;
+}

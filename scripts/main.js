@@ -42,7 +42,7 @@ if (botaoMenu && menu) {
         console.log("pais:", dados.country_code);
 
     } catch (erro) {
-        console.log("Usando o idioma do navegador.");
+        console.log("usando o idioma do navegador");
     }
 
     document.documentElement.lang = idioma === "pt" ? "pt-BR" : "en";
