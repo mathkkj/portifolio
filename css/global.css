@@ -1300,7 +1300,6 @@ button:focus-visible {
             auto-fill,
             minmax(min(100%, 230px), 260px)
         );
-        justify-content: stretch;
         gap: 14px;
     }
 
