@@ -82,32 +82,41 @@
 
             </button>
 
-            <nav class="site-nav" id="main-nav">
+            
+<nav class="site-nav" id="main-nav">
 
-                <a
-                    href="#baixar-cv"
-                    download="mathdev-cv.pdf"
-                    data-pt="Baixar CV"
-                    data-en="Download CV">
-                    Baixar CV
-                </a>
+    <a
+        href="cv/matheus_cabral_cv.pdf"
+        download="Matheus_Cabral_CV.pdf"
+        data-pt="Baixar CV"
+        data-en="Download CV">
+        Baixar CV
+    </a>
 
-                <a
-                    href="#projetos"
-                    data-pt="Projetos"
-                    data-en="Projects">
-                    Projetos
-                </a>
+    <a
+        href="#projetos"
+        data-pt="Projetos"
+        data-en="Projects">
+        Projetos
+    </a>
 
-                <a
-                    href="#contato"
-                    class="nav-contact"
-                    data-pt="Contato"
-                    data-en="Contact">
-                    Contato
-                </a>
+    <a
+        href="#sobre-mim"
+        data-pt="Sobre mim"
+        data-en="About me">
+        Sobre mim
+    </a>
 
-            </nav>
+    <a
+        href="#contato"
+        class="nav-contact"
+        data-pt="Contato"
+        data-en="Contact">
+        Contato
+    </a>
+
+</nav>
+
 
         </div>
 
@@ -118,7 +127,9 @@
     <main id="inicio">
 
 
+        <!-- ================================================== -->
         <!-- DESENVOLVIMENTO DE JOGOS -->
+        <!-- ================================================== -->
 
         <section id="projetos" class="projects-section">
 
@@ -176,12 +187,11 @@
                                 <video
                                     class="project-tile-video"
                                     src="assets/projetos/roguenave/preview.mp4"
-                                    poster="assets/projetos/roguenave/preview_roguenave-02.png"
+                                    poster="assets/projetos/roguenave/preview.mp4"
                                     muted
                                     loop
+                                    autoplay
                                     playsinline
-                                    preload="none"
-                                    aria-hidden="true"
                                     tabindex="-1">
                                 </video>
 
@@ -238,12 +248,11 @@
                                 <video
                                     class="project-tile-video"
                                     src="assets/projetos/pesque_e_pegue/preview.mp4"
-                                    poster="assets/projetos/pesque_e_pegue/icon.png"
+                                    poster="assets/projetos/pesque_e_pegue/preview.mp4"
                                     muted
                                     loop
+                                    autoplay
                                     playsinline
-                                    preload="none"
-                                    aria-hidden="true"
                                     tabindex="-1">
                                 </video>
 
@@ -297,12 +306,11 @@
                                 <video
                                     class="project-tile-video"
                                     src="assets/projetos/30seconds/preview.mp4"
-                                    poster="assets/projetos/30seconds/icon.png"
+                                    poster="assets/projetos/30seconds/preview.mp4"
                                     muted
                                     loop
+                                    autoplay
                                     playsinline
-                                    preload="none"
-                                    aria-hidden="true"
                                     tabindex="-1">
                                 </video>
 
@@ -348,7 +356,7 @@
 
                                 <img
                                     class="project-tile-image"
-                                    src="assets/projetos/distortia/preview.png"
+                                    src="assets/projetos/distortia/icon.png"
                                     alt=""
                                     loading="lazy">
 
@@ -396,7 +404,7 @@
 
                                 <img
                                     class="project-tile-image"
-                                    src="assets/projetos/the-arcanum-corsaires/preview.png"
+                                    src="assets/projetos/tac/icon.jpeg"
                                     alt=""
                                     loading="lazy">
 
@@ -470,12 +478,12 @@
                             aria-pressed="false">
 
                             <img
-                                src="assets/desenhos/minha-ilustracao.png"
+                                src="assets/sobre/desenho.png"
                                 class="about-photo-image is-active"
                                 alt="Meu desenho">
 
                             <img
-                                src="assets/desenhos/minha-foto.png"
+                                src="assets/sobre/eu.jpg"
                                 class="about-photo-image"
                                 alt="Minha foto">
 
@@ -497,9 +505,9 @@
                     <div class="about-description">
 
                         <h3
-                            data-pt="Olá, eu sou o Math."
-                            data-en="Hey, I'm Math.">
-                            Olá, eu sou o Math.
+                            data-pt="Opa, eu sou Matheus."
+                            data-en="Hey, I'm Matheus.">
+                            Opa, eu sou Matheus.
                         </h3>
 
                         <p
@@ -790,10 +798,14 @@
 
 
 
+    <!-- ================================================== -->
     <!-- JANELAS DOS PROJETOS -->
+    <!-- ================================================== -->
 
 
+    <!-- ================================================== -->
     <!-- ROGUENAVE -->
+    <!-- ================================================== -->
 
     <dialog
         id="rogue-nave-details"
@@ -1062,7 +1074,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- PESQUE E PEGUE -->
+    <!-- ================================================== -->
 
     <dialog
         id="pesque-e-pegue-details"
@@ -1212,8 +1226,12 @@
             <!-- TECNOLOGIAS -->
             <div class="project-tags">
 
-                <span>Game Development</span>
-                <span>Game Design</span>
+                <div class="project-tags">
+    <span>Godot Engine</span>
+    <span>Control Nodes</span>
+    <span>Gameplay Programming</span>
+    <span>Game Design</span>
+</div>
 
             </div>
 
@@ -1251,7 +1269,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- 30 SECONDS TO THE END -->
+    <!-- ================================================== -->
 
     <dialog
         id="thirty-seconds-to-the-end-details"
@@ -1425,9 +1445,12 @@
             <!-- TECNOLOGIAS -->
             <div class="project-tags">
 
-                <span>Game Development</span>
-                <span>Game Design</span>
-
+                <div class="project-tags">
+    <span>Godot Engine</span>
+    <span>Gameplay Programming</span>
+    <span>Game Design</span>
+    <span>Roguelike Systems</span>
+</div>
             </div>
 
 
@@ -1500,7 +1523,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- DISTORTIA -->
+    <!-- ================================================== -->
 
     <dialog
         id="distortia-details"
@@ -1527,11 +1552,10 @@
                 </h2>
 
                 <p
-                    data-pt="Um projeto de desenvolvimento de jogos. Mais informações sobre o projeto em breve."
-                    data-en="A game development project. More information coming soon.">
+                    data-pt="Jogo educativo desenvolvido no Construct, com uma abordagem bem-humorada sobre a conscientização e o combate à desinformação e às fake news. Criado como projeto escolar, foi um dos meus primeiros trabalhos com desenvolvimento de jogos."
+                    data-en="An educational game developed in Construct, with a humorous approach to raising awareness and combating misinformation and fake news. Created as a school project, it was one of my first experiences with game development.">
 
-                    Um projeto de desenvolvimento de jogos.
-                    Mais informações sobre o projeto em breve.
+
 
                 </p>
 
@@ -1593,18 +1617,20 @@
                     <figure class="project-media-item">
 
                         <a
-                            href="assets/projetos/distortia/foto-01.png"
+                            href="assets/projetos/distortia/Gameplay_quarto.png"
                             data-image-view>
 
                             <img
-                                src="assets/projetos/distortia/foto-01.png"
+                                src="assets/projetos/distortia/Gameplay_quarto.png"
                                 alt="DISTORTIA - imagem 01"
                                 loading="lazy">
 
                         </a>
 
-                        <figcaption>
-                            Imagem do projeto DISTORTIA.
+                        <figcaption
+                            data-pt="Captura de tela da gameplay no quarto da personagem principal."
+                            data-en="Screenshot of gameplay in the main character's bedroom.">
+                            Captura de tela da gameplay no quarto da personagem principal.
                         </figcaption>
 
                     </figure>
@@ -1615,18 +1641,42 @@
                     <figure class="project-media-item">
 
                         <a
-                            href="assets/projetos/distortia/foto-02.png"
+                            href="assets/projetos/distortia/gameplay_clicker.png"
                             data-image-view>
 
                             <img
-                                src="assets/projetos/distortia/foto-02.png"
+                                src="assets/projetos/distortia/gameplay_clicker.png"
                                 alt="DISTORTIA - imagem 02"
                                 loading="lazy">
 
                         </a>
 
-                        <figcaption>
-                            Outra imagem do projeto.
+                        <figcaption
+                            data-pt="Captura de tela do jogo no site de ver notícias, que pode apresentar notícias falsas ou verdadeiras."
+                            data-en="Screenshot of the game on the news website, which may feature fake or true news.">
+                            Captura de tela do jogo no site de ver notícias, que pode apresentar notícias falsas ou verdadeiras.
+                        </figcaption>
+
+                    </figure>
+
+                    <!-- IMAGEM 03 -->
+                    <figure class="project-media-item">
+
+                        <a
+                            href="assets/projetos/distortia/gameplay_davy.png"
+                            data-image-view>
+
+                            <img
+                                src="assets/projetos/distortia/gameplay_davy.png"
+                                alt="DISTORTIA - imagem 03"
+                                loading="lazy">
+
+                        </a>
+
+                        <figcaption
+                            data-pt="Captura de tela do site de notícias acessado no computador da personagem principal, onde ela produz fake news. As notícias exibidas podem ser falsas ou verdadeiras, dependendo da quantidade de fake news que o jogador criou."
+                            data-en="Screenshot of the news website accessed on the main character's computer, where she creates fake news. The stories shown may be false or true, depending on how many fake news stories the player has created.">
+                            Captura de tela do site de notícias acessado no computador da personagem principal, onde ela produz fake news. As notícias exibidas podem ser falsas ou verdadeiras, dependendo da quantidade de fake news que o jogador criou.
                         </figcaption>
 
                     </figure>
@@ -1641,8 +1691,12 @@
             <!-- TECNOLOGIAS -->
             <div class="project-tags">
 
-                <span>Game Development</span>
-                <span>Game Design</span>
+                <div class="project-tags">
+    <span>Construct</span>
+    <span>Game Development</span>
+    <span>Game Design</span>
+    <span>Educational Game</span>
+</div>
 
             </div>
 
@@ -1680,7 +1734,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- THE ARCANUM CORSAIRES -->
+    <!-- ================================================== -->
 
     <dialog
         id="the-arcanum-corsaires-details"
@@ -1703,12 +1759,12 @@
                 <span class="projects-label">PROJETO / 05</span>
 
                 <h2 id="the-arcanum-corsaires-title">
-                    the arcanum Corsaires
+                    The Arcanum Corsaires
                 </h2>
 
                 <p
-                    data-pt="Um projeto de jogo independente. Mais informações sobre o desenvolvimento em breve."
-                    data-en="An independent game project. More information about its development coming soon.">
+                    data-pt="Metroidvania 2D de ação e exploração, desenvolvido na Godot. O jogo apresenta cinco regiões interconectadas, chefes e habilidades baseadas em elementos mágicos. Idealizei o projeto e liderei o Game Design, planejando o mapa, a progressão e as mecânicas."
+                    data-en="A 2D action and exploration Metroidvania game developed in Godot. The game features five interconnected regions, bosses, and magic-based abilities. I conceptualized the project and led the Game Design, planning the map, progression, and mechanics.">
 
                     Um projeto de jogo independente.
                     Mais informações sobre o desenvolvimento em breve.
@@ -1798,11 +1854,11 @@
                     <figure class="project-media-item">
 
                         <a
-                            href="assets/projetos/the-arcanum-corsaires/foto-01.png"
+                            href="assets/projetos/tac/icon.jpeg"
                             data-image-view>
 
                             <img
-                                src="assets/projetos/the-arcanum-corsaires/foto-01.png"
+                                src="assets/projetos/tac/icon.jpeg"
                                 alt="the arcanum Corsaires - imagem 01"
                                 loading="lazy">
 
@@ -1816,25 +1872,6 @@
 
 
 
-                    <!-- IMAGEM 02 -->
-                    <figure class="project-media-item">
-
-                        <a
-                            href="assets/projetos/the-arcanum-corsaires/foto-02.png"
-                            data-image-view>
-
-                            <img
-                                src="assets/projetos/the-arcanum-corsaires/foto-02.png"
-                                alt="the arcanum Corsaires - imagem 02"
-                                loading="lazy">
-
-                        </a>
-
-                        <figcaption>
-                            Outra imagem do projeto.
-                        </figcaption>
-
-                    </figure>
 
 
                 </div>
@@ -1846,8 +1883,13 @@
             <!-- TECNOLOGIAS -->
             <div class="project-tags">
 
-                <span>Game Development</span>
-                <span>Game Design</span>
+                <div class="project-tags">
+    <span>Godot Engine</span>
+    <span>Game Design</span>
+    <span>Level Design</span>
+    <span>Gameplay Programming</span>
+    <span>Metroidvania</span>
+</div>
 
             </div>
 
@@ -1921,7 +1963,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- VISUALIZADOR DE IMAGENS -->
+    <!-- ================================================== -->
 
     <dialog id="image-viewer" class="image-viewer">
 
@@ -1941,7 +1985,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- BIBLIOTECAS -->
+    <!-- ================================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
@@ -1950,7 +1996,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- SCRIPTS DO SITE -->
+    <!-- ================================================== -->
 
     <script src="scripts/background.js"></script>
     <script src="scripts/main.js"></script>
@@ -1968,7 +2016,9 @@
 
 
 
+    <!-- ================================================== -->
     <!-- SCRIPTS DAS APIS -->
+    <!-- ================================================== -->
 
     <script src="scripts/itch.js"></script>
     <script src="scripts/projetos.js"></script>

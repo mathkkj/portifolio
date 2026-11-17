@@ -2171,7 +2171,7 @@ button:focus-visible {
 
 }
 
-@media (hover: none), (pointer: coarse) {
+@media (hover: none) and (pointer: coarse) {
     .project-tile-video {
         opacity: 0;
         visibility: hidden;
