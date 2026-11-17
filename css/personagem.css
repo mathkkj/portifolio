@@ -349,3 +349,34 @@
     }
 
 }
+
+/* ========================================
+   ORBITAS - AJUSTE MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .floating-character {
+        --orbit-size: clamp(145px, 40vw, 180px);
+        --icon-size: clamp(16px, 4vw, 21px);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .floating-character {
+        --orbit-size: clamp(125px, 36vw, 155px);
+        --icon-size: 17px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .floating-character {
+        --orbit-size: 115px;
+        --icon-size: 16px;
+    }
+
+}
