@@ -46,12 +46,12 @@
     <!-- PERSONAGENS ANIMADOS -->
     <div class="floating-characters">
 
-        <div class="floating-character character-one">
+        <div class="floating-character character-one" data-tilt>
             <div class="orbit-icons" id="orbit-web"></div>
             <img src="assets/desenhos/personagem-01.png" alt="">
         </div>
 
-        <div class="floating-character character-two">
+        <div class="floating-character character-two" data-tilt>
             <div class="orbit-icons" id="orbit-games"></div>
             <img src="assets/desenhos/personagem-02.png" alt="">
         </div>
@@ -109,9 +109,7 @@
     <main id="inicio">
 
 
-        <!-- ================================================== -->
         <!-- DESENVOLVIMENTO DE JOGOS -->
-        <!-- ================================================== -->
 
         <section id="projetos" class="projects-section">
 
@@ -392,7 +390,7 @@
 
 
                     <!-- FOTO INTERATIVA -->
-                    <div class="about-photo">
+                    <div class="about-photo" data-tilt>
 
                         <button class="about-photo-toggle" id="about-photo-toggle" type="button"
                             aria-label="Mostrar minha foto real" aria-pressed="false">
@@ -556,20 +554,21 @@
 
         <!-- CONTATO -->
 
+        <!-- CONTATO -->
         <section id="contato" class="contact-section">
 
             <div class="contact-container">
 
                 <div class="contact-heading">
 
-                    <span class="projects-label">CONTACT / 04</span>
+                    <span class="contact-label">CONTACT / 04</span>
 
-                    <h2 data-pt="Manda um zap" data-en="Message me">
-                        Manda um zap
+                    <h2 data-pt="Manda um zap ae" data-en="Contact me">
+                        Contato
                     </h2>
 
                     <p data-pt="Entre em contato comigo ou confira meus outros projetos."
-                        data-en="Get in touch or check out some of my other projects.">
+                        data-en="Get in touch with me or check out my other projects.">
 
                         Entre em contato comigo ou confira meus outros projetos.
 
@@ -578,112 +577,118 @@
                 </div>
 
 
-                <div class="contact-grid">
+                <div class="contact-content">
 
+                    <!-- INFORMACOES DE CONTATO -->
+                    <div class="contact-links">
 
-                    <!-- EMAIL -->
-                    <a class="contact-item" href="mailto:matheuscabralr@gmail.com">
-
-                        <div class="contact-item-heading">
+                        <a href="mailto:matheuscabralr@gmail.com" class="contact-item">
 
                             <span class="contact-number">01</span>
 
+                            <div>
+                                <span class="contact-type">Email</span>
+                                <strong>matheuscabralr@gmail.com</strong>
+                            </div>
+
                             <span class="contact-arrow">↗</span>
 
-                        </div>
-
-                        <div class="contact-item-content">
-
-                            <span>Email</span>
-
-                            <h3>matheuscabralr@gmail.com</h3>
-
-                        </div>
-
-                    </a>
+                        </a>
 
 
-
-                    <!-- TELEFONE -->
-                    <a class="contact-item" href="tel:+5521985423938">
-
-                        <div class="contact-item-heading">
+                        <a href="tel:+5521985423938" class="contact-item">
 
                             <span class="contact-number">02</span>
 
+                            <div>
+                                <span class="contact-type">Telefone</span>
+                                <strong>+55 (21) 98542-3938</strong>
+                            </div>
+
                             <span class="contact-arrow">↗</span>
 
-                        </div>
-
-                        <div class="contact-item-content">
-
-                            <span data-pt="Telefone" data-en="Phone">
-                                Telefone
-                            </span>
-
-                            <h3>+55 (21) 98542-3938</h3>
-
-                        </div>
-
-                    </a>
+                        </a>
 
 
-
-                    <!-- ITCH.IO -->
-                    <a class="contact-item" href="https://mathkkj.itch.io/" target="_blank" rel="noopener noreferrer">
-
-                        <div class="contact-item-heading">
+                        <a href="https://mathkkj.itch.io/" target="_blank" rel="noopener noreferrer"
+                            class="contact-item">
 
                             <span class="contact-number">03</span>
 
+                            <div>
+                                <span class="contact-type">itch.io</span>
+                                <strong>mathkkj.itch.io</strong>
+                            </div>
+
                             <span class="contact-arrow">↗</span>
 
-                        </div>
-
-                        <div class="contact-item-content">
-
-                            <span>itch.io</span>
-
-                            <h3>mathkkj.itch.io</h3>
-
-                        </div>
-
-                    </a>
+                        </a>
 
 
-
-                    <!-- GITHUB -->
-                    <a class="contact-item" href="https://github.com/mathkkj" target="_blank" rel="noopener noreferrer">
-
-                        <div class="contact-item-heading">
+                        <a href="https://github.com/mathkkj" target="_blank" rel="noopener noreferrer"
+                            class="contact-item">
 
                             <span class="contact-number">04</span>
 
+                            <div>
+                                <span class="contact-type">GitHub</span>
+                                <strong>github.com/mathkkj</strong>
+                            </div>
+
                             <span class="contact-arrow">↗</span>
 
+                        </a>
+
+                    </div>
+
+
+                    <!-- CARTAO DE VISITAS -->
+                    <div class="contact-business-card">
+
+                        <div class="business-card-heading">
+
+                            <span>BUSINESS CARD / 05</span>
+
+                            <span>↘</span>
+
                         </div>
 
-                        <div class="contact-item-content">
 
-                            <span>GitHub</span>
+                        <a href="/assets/documentos/cartao_de_visita.png" data-image-view class="business-card-preview"
+                            aria-label="Ampliar cartão de visitas" data-tilt>
 
-                            <h3>github.com/mathkkj</h3>
+                            <img src="/assets/documentos/cartao_de_visita.png" alt="Cartão de visitas de Matheus Cabral"
+                                loading="lazy" >
+
+                        </a>
+
+
+                        <div class="business-card-footer">
+
+                            <span data-pt="Meu cartão de visitas (eu não sou um designer)" data-en="My business card (i am not a designer)">
+
+                                Meu cartão de visitas (eu não sou um designer)
+                            </span>
+
+                            <a href="/assets/documentos/cartao_de_visita.png" download="matheus-cabral-cartao.png">
+
+                                <span data-pt="Baixar cartão" data-en="Download card">
+                                    Baixar cartão
+                                </span>
+
+                                <span>↓</span>
+
+                            </a>
 
                         </div>
 
-                    </a>
-
-
-                </div>
-
-
-                <div class="contact-footer">
-
-                    <span>MATHDEV.</span>
+                    </div>
 
                 </div>
 
             </div>
+
+
 
         </section>
 
@@ -693,14 +698,10 @@
 
 
 
-    <!-- ================================================== -->
     <!-- JANELAS DOS PROJETOS -->
-    <!-- ================================================== -->
 
 
-    <!-- ================================================== -->
     <!-- ROGUENAVE -->
-    <!-- ================================================== -->
 
     <dialog id="rogue-nave-details" class="project-dialog" aria-labelledby="rogue-nave-details-title">
 
@@ -738,7 +739,7 @@
 
 
                 <!-- LINKS DO PROJETO -->
-                <div class="project-actions">
+                <div class="project-actions" >
 
                     <a id="rogue-nave-github" class="project-link" href="https://github.com/mathkkj/ROGUENAVE"
                         target="_blank" rel="noopener noreferrer">
@@ -799,9 +800,9 @@
 
 
                     <!-- IMAGEM 01 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
-                        <a href="assets/projetos/roguenave/foto-01.jpg" data-image-view>
+                        <a href="assets/projetos/roguenave/foto-01.jpg" data-image-view >
 
                             <img src="assets/projetos/roguenave/foto-01.jpg" alt="RogueNave - imagem principal"
                                 loading="lazy">
@@ -824,7 +825,7 @@
 
 
                     <!-- IMAGEM 02 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
                         <a href="assets/projetos/roguenave/foto-02.jpeg" data-image-view>
 
@@ -924,9 +925,7 @@
 
 
 
-    <!-- ================================================== -->
     <!-- PESQUE E PEGUE -->
-    <!-- ================================================== -->
 
     <dialog id="pesque-e-pegue-details" class="project-dialog" aria-labelledby="pesque-e-pegue-title">
 
@@ -995,7 +994,7 @@
 
 
                     <!-- IMAGEM 01 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
                         <a href="assets/projetos/pesque_e_pegue/imagem-01.png" data-image-view>
 
@@ -1015,7 +1014,7 @@
 
 
                     <!-- IMAGEM 02 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
                         <a href="assets/projetos/pesque_e_pegue/imagem-02.png" data-image-view>
 
@@ -1083,9 +1082,7 @@
 
 
 
-    <!-- ================================================== -->
     <!-- 30 SECONDS TO THE END -->
-    <!-- ================================================== -->
 
     <dialog id="thirty-seconds-to-the-end-details" class="project-dialog"
         aria-labelledby="thirty-seconds-to-the-end-title">
@@ -1106,7 +1103,7 @@
                 </h2>
 
                 <p data-pt="Top-down shooter desenvolvido para a GMTK Game Jam 2026, com combate por waves, cronômetro e upgrades roguelike. Idealizei o jogo e programei o gameplay principal, incluindo combate, waves e progressão, em colaboração com a equipe."
-                                        data-en="A top-down shooter developed for GMTK Game Jam 2026, featuring wave-based combat, a timer, and roguelike upgrades. I conceived the game and programmed its core gameplay, including combat, waves, and progression, in collaboration with the team.">
+                    data-en="A top-down shooter developed for GMTK Game Jam 2026, featuring wave-based combat, a timer, and roguelike upgrades. I conceived the game and programmed its core gameplay, including combat, waves, and progression, in collaboration with the team.">
 
 
 
@@ -1172,7 +1169,7 @@
 
 
                     <!-- IMAGEM 01 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt >
 
                         <a href="assets/projetos/30seconds/menu.jpeg" data-image-view>
 
@@ -1192,7 +1189,7 @@
 
 
                     <!-- IMAGEM 02 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
                         <a href="assets/projetos/30seconds/gameplay.jpeg" data-image-view>
 
@@ -1290,9 +1287,7 @@
 
 
 
-    <!-- ================================================== -->
     <!-- DISTORTIA -->
-    <!-- ================================================== -->
 
     <dialog id="distortia-details" class="project-dialog" aria-labelledby="distortia-title">
 
@@ -1362,9 +1357,9 @@
 
 
                     <!-- IMAGEM 01 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt >
 
-                        <a href="assets/projetos/distortia/Gameplay_quarto.png" data-image-view>
+                        <a href="assets/projetos/distortia/Gameplay_quarto.png" data-image-view >
 
                             <img src="assets/projetos/distortia/Gameplay_quarto.png" alt="DISTORTIA - imagem 01"
                                 loading="lazy">
@@ -1381,7 +1376,7 @@
 
 
                     <!-- IMAGEM 02 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
                         <a href="assets/projetos/distortia/gameplay_clicker.png" data-image-view>
 
@@ -1400,7 +1395,7 @@
                     </figure>
 
                     <!-- IMAGEM 03 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
                         <a href="assets/projetos/distortia/gameplay_davy.png" data-image-view>
 
@@ -1470,9 +1465,7 @@
 
 
 
-    <!-- ================================================== -->
     <!-- THE ARCANUM CORSAIRES -->
-    <!-- ================================================== -->
 
     <dialog id="the-arcanum-corsaires-details" class="project-dialog" aria-labelledby="the-arcanum-corsaires-title">
 
@@ -1559,7 +1552,7 @@
 
 
                     <!-- IMAGEM 01 -->
-                    <figure class="project-media-item">
+                    <figure class="project-media-item" data-tilt>
 
                         <a href="assets/projetos/tac/icon.jpeg" data-image-view>
 
@@ -1659,9 +1652,8 @@
 
 
 
-    <!-- ================================================== -->
     <!-- VISUALIZADOR DE IMAGENS -->
-    <!-- ================================================== -->
+    <!--  -->
 
     <dialog id="image-viewer" class="image-viewer">
 
@@ -1675,20 +1667,18 @@
 
 
 
-    <!-- ================================================== -->
     <!-- BIBLIOTECAS -->
-    <!-- ================================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@4/tsparticles.engine.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://static.itch.io/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>    
 
 
 
-    <!-- ================================================== -->
+
     <!-- SCRIPTS DO SITE -->
-    <!-- ================================================== -->
 
     <script src="scripts/background.js"></script>
     <script src="scripts/main.js"></script>
@@ -1706,9 +1696,7 @@
 
 
 
-    <!-- ================================================== -->
     <!-- SCRIPTS DAS APIS -->
-    <!-- ================================================== -->
 
     <script src="scripts/itch.js"></script>
     <script src="scripts/projetos.js"></script>

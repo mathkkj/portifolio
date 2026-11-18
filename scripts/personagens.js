@@ -132,33 +132,47 @@
 
     // destaque dos personagens ao tocar ou clicar
 
-document.querySelectorAll(".floating-character").forEach((personagem) => {
+    document.querySelectorAll(".floating-character").forEach((personagem) => {
 
-    let temporizador;
+        let temporizador;
 
-    personagem.addEventListener("pointerdown", () => {
+        personagem.addEventListener("pointerdown", () => {
 
-        clearTimeout(temporizador);
+            clearTimeout(temporizador);
 
-        personagem.classList.add("is-highlighted");
+            personagem.classList.add("is-highlighted");
+
+        });
+
+        function iniciarRetorno() {
+
+            clearTimeout(temporizador);
+
+            temporizador = setTimeout(() => {
+
+                personagem.classList.remove("is-highlighted");
+
+            }, 900);
+
+        }
+
+        personagem.addEventListener("pointerup", iniciarRetorno);
+        personagem.addEventListener("pointercancel", iniciarRetorno);
 
     });
 
-    function iniciarRetorno() {
-
-        clearTimeout(temporizador);
-
-        temporizador = setTimeout(() => {
-
-            personagem.classList.remove("is-highlighted");
-
-        }, 900);
-
-    }
-
-    personagem.addEventListener("pointerup", iniciarRetorno);
-    personagem.addEventListener("pointercancel", iniciarRetorno);
-
-});
-
 })();
+
+VanillaTilt.init(
+    document.querySelectorAll("[data-tilt]"),
+    {
+        max: 8,
+        perspective: 1000,
+        scale: 1.03,
+        speed: 500,
+        transition: true,
+        glare: true,
+        "max-glare": 0.15,
+        gyroscope: false
+    }
+);
