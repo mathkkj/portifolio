@@ -109,7 +109,7 @@
 /* CARTAO DE VISITAS */
 
 .contact-business-card {
-    padding: 18px;
+    padding: 25px 20px;
     background: rgba(255, 255, 255, 0.035);
     border: 1px solid rgba(166, 232, 186, 0.2);
     border-radius: 8px;
@@ -123,6 +123,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    margin-bottom: 1px;
+
 
 }
 
@@ -155,7 +157,7 @@
 .business-card-footer {
     margin-top: 17px;
     color: #aab5ad;
-    font-size: 0.85rem;
+    font-size: 0.80rem;
 }
 
 .business-card-footer a {
@@ -208,3 +210,5 @@
     }
 
 }
+
+

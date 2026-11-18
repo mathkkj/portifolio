@@ -168,7 +168,30 @@
 }
 
 
+/* celulares e tablets */
 
+@media (max-width: 700px) {
+
+    .floating-character {
+        --orbit-size: clamp(190px, 55vw, 250px);
+        --icon-size: clamp(19px, 5vw, 25px);
+    }
+
+    .character-one {
+        top: 13%;
+        right: clamp(65px, 20vw, 105px);
+        width: clamp(95px, 25vw, 125px);
+    }
+
+    .character-two {
+        bottom: 12%;
+        left: clamp(65px, 20vw, 105px);
+        width: clamp(95px, 25vw, 125px);
+    }
+
+
+
+}
 
 /* celulares e tablets */
 @media (max-width: 700px) {
@@ -186,7 +209,7 @@
 
     .character-two {
         top: auto;
-        bottom: 5%;
+        bottom: 10%;
         left: clamp(65px, 20vw, 105px);
         width: clamp(95px, 25vw, 125px);
     }
